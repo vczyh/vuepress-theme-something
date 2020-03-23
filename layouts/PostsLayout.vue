@@ -1,0 +1,104 @@
+<template>
+  <main class="page">
+    <div :class="themeClass">
+      <div v-if="!isMobile" class="info">
+        <DefaultTransition delay="0.02">
+          <Avatar v-show="showTransition" :key="key"></Avatar>
+        </DefaultTransition>
+        <DefaultTransition delay="0.04">
+          <Card v-show="showTransition" class="tags-info" :key="key">
+            <Tags :tags="tags" size="medium" marginStyle="3px 3px" />
+          </Card>
+        </DefaultTransition>
+      </div>
+      <div class="posts">
+        <PostsPagination :posts="posts" :key="key" class="post-pagination" />
+      </div>
+    </div>
+  </main>
+</template>
+
+<script>
+import PostsPagination from "@theme/components/PostsPagination.vue";
+import Avatar from "@theme/components/Avatar.vue";
+import Tags from "@theme/components/Tags.vue";
+import Card from "@theme/components/Card.vue";
+// import { resolveSidebarItems } from "../util";
+import { currentPathPosts, tags } from "../util/storage";
+import transitonMixin from "@theme/mixins/transition";
+import deviceMixin from "@theme/mixins/device";
+import { getCurrentPathPosts } from "../util/post";
+import { setCurrentPage, getCurrentPage } from "../util/storage";
+
+export default {
+  name: "PostLayout",
+  components: {
+    PostsPagination,
+    Avatar,
+    Tags,
+    Card
+  },
+  mixins: [transitonMixin, deviceMixin],
+
+  data() {
+    return {
+      key: 0,
+      posts: [],
+      tags: []
+    };
+  },
+
+  computed: {
+    themeClass() {
+      return this.isMobile ? "theme-default-content" : "theme-custom-content";
+    }
+  },
+
+  methods: {
+    getCurrentPathPosts() {
+      this.posts = currentPathPosts(this.$page.path);
+    },
+    getTags() {
+      this.tags = tags();
+    }
+  },
+
+  watch: {
+    $route(to, from) {
+      this.getCurrentPathPosts();
+      this.key++;
+    }
+  },
+
+  mounted() {
+    this.getCurrentPathPosts();
+    this.getTags();
+  }
+};
+</script>
+<style lang="stylus" scoped>
+// @require '../styles/wrapper.styl';
+.page {
+  padding-bottom 2rem
+  display block
+}
+.theme-custom-content {
+  display flex
+  justify-content center
+  width 100%
+  margin-top 6rem
+  .info {
+    display flex
+    width 300px
+    flex-direction column
+    margin-right 30px
+    .tags-info {
+      margin-top 30px
+      padding 10px
+    }
+  }
+  .post-pagination {
+    width 700px
+  }
+}
+</style>
