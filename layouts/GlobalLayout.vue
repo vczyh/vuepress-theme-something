@@ -41,7 +41,6 @@ import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
 import { resolveSidebarItems } from "@parent-theme/util";
-import { storePostsInfo } from "../util/storage";
 
 import Gitalk from "@theme/components/Gitalk.vue";
 import TagsLayout from "@theme/layouts/TagsLayout.vue";

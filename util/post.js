@@ -1,13 +1,10 @@
 import { getTimeStamp } from "../util/common"
 
 export function getCurrentPathPosts(posts, path) {
-  // console.log("getCurrentPathPosts");
-  // console.log(posts)
   return posts = posts.filter(post => post.path.startsWith(path));
 }
 
 export function getTags(posts) {
-  // console.log('getTags')
   const tags = []
   for (const post of posts) {
     const postTags = post.frontmatter.tag;
@@ -21,8 +18,6 @@ export function getTags(posts) {
 }
 
 export function getCurrentTagPosts(posts, tag) {
-  // console.log('getCurrentTagPosts')
-  // console.log(posts)
   if (!tag) return posts
   return posts.filter(post => {
     const postTags = post.frontmatter.tag
@@ -30,7 +25,6 @@ export function getCurrentTagPosts(posts, tag) {
   })
 }
 export function getPosts({ pages, themeConfig }) {
-  // console.log('getPosts')
   const navPaths = getNavPaths(themeConfig.nav)
   return pages.filter(page => {
     return navPaths.indexOf(page.path) == -1
@@ -55,17 +49,40 @@ export function sortPostsByDate(posts) {
   })
 }
 
+// export function getArchive(posts) {
+//   const archive = {}
+//   for (const post of posts) {
+//     let year = new Date().getFullYear()
+//     if (post.frontmatter.date) {
+//       year = new Date(post.frontmatter.date).getFullYear()
+//     }
+//     if (!archive.hasOwnProperty(year)) {
+//       archive[year] = []
+//     }
+//     archive[year].push(post)
+//   }
+//   return archive
+// }
+
+
 export function getArchive(posts) {
-  const archive = {}
+  const archive = []
   for (const post of posts) {
     let year = new Date().getFullYear()
     if (post.frontmatter.date) {
       year = new Date(post.frontmatter.date).getFullYear()
     }
-    if (!archive.hasOwnProperty(year)) {
-      archive[year] = []
+    let i = 0
+    for (; i < archive.length; i++) {
+      if (archive[i].year == year) {
+        archive[i].posts.push(post)
+        break
+      }
     }
-    archive[year].push(post)
+    if (i == archive.length) {
+      archive.push({ year: year, posts: [post] })
+    }
+
   }
   return archive
 }

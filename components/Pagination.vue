@@ -1,15 +1,4 @@
 <template>
-  <!-- <el-pagination
-    class="pagination"
-    layout="prev, pager, next"
-    :total="total"
-    :hide-on-single-page="true"
-    :page-size="pageSize"
-    :pager-count="pagerCount"
-    :current-page="currentPage"
-    @current-change="currentChange"
-  ></el-pagination>-->
-
   <div>
     <ul v-show="paginationShow" :style="{'text-align' : align}">
       <li :class="{ht : preDisabled}" @click="pre()">上一页</li>
@@ -84,8 +73,6 @@ export default {
     },
 
     paginationShow() {
-      // console.log("pagination");
-      // console.log(this.total);
       return this.pages > 1;
     },
 
@@ -170,8 +157,7 @@ export default {
         this.currentChange();
       }
     }
-
-  },
+  }
 };
 </script>
 

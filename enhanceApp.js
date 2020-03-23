@@ -13,10 +13,12 @@ export default ({
   siteData // 站点元数据
 }) => {
   // ...做一些其他的应用级别的优化
+
   const posts = sortPostsByDate(getPosts(siteData))
   Vue.prototype.$posts = posts
   Vue.prototype.$tags = getTags(posts)
   Vue.prototype.$archive = getArchive(posts)
+
   router.beforeEach((to, from, next) => {
     Vue.prototype.$currentPathPosts = getCurrentPathPosts(posts, to.path)
     next()

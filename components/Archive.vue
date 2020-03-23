@@ -1,31 +1,27 @@
 <template>
   <div>
-    <ul v-for="item in years">
+    <ul v-for="item in $archive">
       <li>
-        <span class="year">{{item}}</span>
+        <span class="year">{{item.year}}</span>
       </li>
-      <li v-for="post in archive[item]">
+      <li v-for="post in item.posts">
         <div class="content">
           <span class="date">{{formatDate(post.frontmatter.date)}}</span>
           <router-link :to="post.path" style="text-decoration: none" class="title">{{post.title}}</router-link>
         </div>
       </li>
     </ul>
-    <!-- <div class="test">abc</div> -->
-    <!-- <div class="content">abc</div> -->
   </div>
 </template>
 
 <script>
-import Card from "@theme/components/Card.vue";
 import { formatMonthAndDay } from "../util/common";
 export default {
-  components: { Card },
   props: ["archive"],
 
   computed: {
     years() {
-      return Object.keys(this.archive);
+      return Object.keys(this.$archive);
     }
   },
 
@@ -33,6 +29,9 @@ export default {
     formatDate(date) {
       return formatMonthAndDay(date);
     }
+  },
+  mounted() {
+    console.log(this.$archive)
   }
 };
 </script>

@@ -10,18 +10,6 @@
       />
     </DefaultTransition>
 
-    <!-- <DefaultTransition delay="0.04">
-      <Pagination
-        v-show="showTransition"
-        :total="posts.length"
-        :page-size="pageSize"
-        :pager-count="pagerCount"
-        :current-page="currentPage"
-        @current-change="currentChange"
-        :key="key"
-      />
-    </DefaultTransition>-->
-
     <DefaultTransition delay="0.04">
       <Pagination
         :total="posts.length"
@@ -38,7 +26,6 @@
 import Posts from "@theme/components/Posts.vue";
 import Pagination from "@theme/components/Pagination.vue";
 import transitonMixin from "@theme/mixins/transition";
-import { setCurretnPage, getCurretnPage } from "../util/storage";
 
 export default {
   name: "PostsPagination",
@@ -76,7 +63,6 @@ export default {
   },
   watch: {
     currentPage() {
-      console.log('page'+ this.currentPage)
       this.key++;
     }
   }
