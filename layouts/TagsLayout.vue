@@ -2,7 +2,7 @@
   <main class="page">
     <div class="theme-default-content">
       <DefaultTransition delay="0.02">
-        <Tags v-show="showTransition" :tags="tags" @click="tagClick" />
+        <Tags v-show="showTransition" :tags="$tags" @click="tagClick" />
       </DefaultTransition>
       <!-- <span>{{currentTag}}</span> -->
       <PostsPagination :posts="currentTagPosts" :key="currentTag" />
@@ -14,7 +14,7 @@
 import Tags from "@theme/components/Tags.vue";
 import PostsPagination from "@theme/components/PostsPagination.vue";
 import transitonMixin from "@theme/mixins/transition";
-import { tags, currentTagPosts } from "../util/storage";
+import { getCurrentTagPosts } from "../util/post";
 
 export default {
   name: "TagsLayout",
@@ -22,7 +22,6 @@ export default {
   mixins: [transitonMixin],
   data() {
     return {
-      tags: [],
       currentTag: "",
       posts: []
     };
@@ -30,22 +29,14 @@ export default {
 
   computed: {
     currentTagPosts() {
-      return currentTagPosts(this.currentTag);
+      return getCurrentTagPosts(this.$posts, this.currentTag);
     }
   },
 
   methods: {
-    getTags() {
-      this.tags = tags();
-    },
-
     tagClick(tag) {
       this.currentTag = tag;
     }
-  },
-
-  mounted() {
-    this.getTags();
   }
 };
 </script>
@@ -53,7 +44,8 @@ export default {
 <style lang="stylus">
 @require '../styles/wrapper.styl'
 
-.page
+.page {
   padding-bottom 2rem
   display block
+}
 </style>

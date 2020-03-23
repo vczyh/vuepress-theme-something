@@ -9,7 +9,7 @@ import {
 
 export function storePostsInfo(site) {
   // console.log('storePostsInfo')
-  console.log(site)
+  // console.log(site)
   const posts = getPosts(site)
   sortPostsByDate(posts)
   const tags = getTags(posts)

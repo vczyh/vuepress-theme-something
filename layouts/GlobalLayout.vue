@@ -130,7 +130,6 @@ export default {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
-    storePostsInfo(this.$site)
   },
 
   methods: {

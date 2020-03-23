@@ -7,12 +7,12 @@
         </DefaultTransition>
         <DefaultTransition delay="0.04">
           <Card v-show="showTransition" class="tags-info" :key="key">
-            <Tags :tags="tags" size="medium" marginStyle="3px 3px" />
+            <Tags :tags="$tags" size="medium" marginStyle="3px 3px" />
           </Card>
         </DefaultTransition>
       </div>
       <div class="posts">
-        <PostsPagination :posts="posts" :key="key" class="post-pagination" />
+        <PostsPagination :posts="$currentPathPosts" :key="key" class="post-pagination" />
       </div>
     </div>
   </main>
@@ -24,11 +24,8 @@ import Avatar from "@theme/components/Avatar.vue";
 import Tags from "@theme/components/Tags.vue";
 import Card from "@theme/components/Card.vue";
 // import { resolveSidebarItems } from "../util";
-import { currentPathPosts, tags } from "../util/storage";
 import transitonMixin from "@theme/mixins/transition";
 import deviceMixin from "@theme/mixins/device";
-import { getCurrentPathPosts } from "../util/post";
-import { setCurrentPage, getCurrentPage } from "../util/storage";
 
 export default {
   name: "PostLayout",
@@ -43,8 +40,6 @@ export default {
   data() {
     return {
       key: 0,
-      posts: [],
-      tags: []
     };
   },
 
@@ -54,25 +49,10 @@ export default {
     }
   },
 
-  methods: {
-    getCurrentPathPosts() {
-      this.posts = currentPathPosts(this.$page.path);
-    },
-    getTags() {
-      this.tags = tags();
-    }
-  },
-
   watch: {
     $route(to, from) {
-      this.getCurrentPathPosts();
       this.key++;
     }
-  },
-
-  mounted() {
-    this.getCurrentPathPosts();
-    this.getTags();
   }
 };
 </script>

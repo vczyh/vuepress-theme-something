@@ -2,6 +2,7 @@ import { getTimeStamp } from "../util/common"
 
 export function getCurrentPathPosts(posts, path) {
   // console.log("getCurrentPathPosts");
+  // console.log(posts)
   return posts = posts.filter(post => post.path.startsWith(path));
 }
 
@@ -21,6 +22,7 @@ export function getTags(posts) {
 
 export function getCurrentTagPosts(posts, tag) {
   // console.log('getCurrentTagPosts')
+  // console.log(posts)
   if (!tag) return posts
   return posts.filter(post => {
     const postTags = post.frontmatter.tag

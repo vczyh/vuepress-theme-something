@@ -23,12 +23,12 @@
       <div class="posts-info-item">
         <!-- <div class="iconfont">&#xe600;</div> -->
         <div class="iconfont">文章</div>
-        <div class="number">{{posts.length}}</div>
+        <div class="number">{{$posts.length}}</div>
       </div>
       <div class="posts-info-item">
         <!-- <div class="iconfont">&#xe62c;</div> -->
         <div class="iconfont">标签</div>
-        <div class="number">{{tags.length}}</div>
+        <div class="number">{{$tags.length}}</div>
       </div>
     </div>
   </Card>
@@ -45,7 +45,7 @@ export default {
   mixins: [postsMixin],
   data() {
     return {
-      links: []
+      
     };
   },
   methods: {
