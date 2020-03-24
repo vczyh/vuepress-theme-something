@@ -4,18 +4,31 @@
 @require './arrow'
 @require './wrapper'
 @require './toc'
+@import '//at.alicdn.com/t/font_1695296_t6z0qkwqfo.css'
 
 html, body
   padding 0
   margin 0
   background-color #fff
 
+// body
+//   font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+//   -webkit-font-smoothing antialiased
+//   -moz-osx-font-smoothing grayscale
+//   font-size 16px
+//   color $textColor
+
+// 知乎
+// -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+
 body
-  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  font-family Comic Sans MS,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif!important;
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   font-size 16px
   color $textColor
+
+
 
 .page
   padding-left $sidebarWidth
@@ -30,6 +43,9 @@ body
   background-color #fff
   box-sizing border-box
   border-bottom 1px solid $borderColor
+  box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2) // custom
+  .logo
+    border-radius 50%  // custom
 
 .sidebar-mask
   position fixed

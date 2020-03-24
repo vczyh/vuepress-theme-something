@@ -1,8 +1,9 @@
 <template>
   <span
     @click="tagClick"
+    class="tag medium"
     :style="{'background-color': color,'border-color':color }"
-    :class="{large : size=='large', medium : size== 'medium' }"
+    :class="{dot: type=='dot' }"
   >
     <slot></slot>
   </span>
@@ -12,25 +13,21 @@
 import { randomInt } from "../util/common";
 export default {
   name: "Tag",
-  // props: ["color", "size"],
   props: {
     color: {
       type: String
     },
-    size:{
-      type:String,
-      defaul: 'large'
+    type: {
+      type: String,
+      default: "dark"
     }
   },
   data() {
     return {
-      colors: ["#409eff", "#67c23a", "#909399", "#f56c", "#e6a"]
+      col: "#404040"
     };
   },
   methods: {
-    randomColor() {
-      colorIndex = this.colors[randomInt(0, this.colors.length - 1)];
-    },
     tagClick() {
       this.$emit("tag-click");
     }
@@ -39,28 +36,44 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.large {
+$tag-vertical-padding = 0px
+$tag-horizontal-padding = 8px
+$height = 1.4rem
+// $height = $height - 0.1rem
+.tag {
   display inline-block
-  height 32px
-  padding 0 10px
-  line-height 30px
-  font-size 12px
-  border 1px solid #d9ecff
-  border-radius 4px
-  box-sizing border-box
-  white-space nowrap
+  padding $tag-vertical-padding $tag-horizontal-padding
   color #fff
+  border-radius 4px
+  white-space nowrap
+  font-size 0.7rem
+  height $height
+  line-height $height
 }
-.medium {
-  display inline-block
-  height 24px
-  padding 0 6px
-  line-height 22px
-  font-size 12px
-  border 1px solid #d9ecff
-  border-radius 4px
-  box-sizing border-box
-  white-space nowrap
-  color #fff
+.dark {
+}
+.dot {
+  position relative
+  margin-left $height + 1.5rem
+  // &::before{
+  // content ''
+  // position absolute
+  // width 0
+  // height 0
+  // top 0
+  // left - $height
+  // border ($height/2) solid transparent
+  // border-right-color red
+  // }
+  &::after {
+    content ''
+    position absolute
+    width 0.25rem
+    height 0.25rem
+    border-radius 50%
+    background #bfbfbf
+    top ($height / 2 - 0.125rem)
+    left 0.25rem
+  }
 }
 </style>

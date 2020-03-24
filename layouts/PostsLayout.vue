@@ -5,11 +5,6 @@
         <DefaultTransition delay="0.02">
           <Avatar v-show="showTransition" :key="key"></Avatar>
         </DefaultTransition>
-        <DefaultTransition delay="0.04">
-          <Card v-show="showTransition" class="tags-info" :key="key">
-            <Tags :tags="$tags" size="medium" marginStyle="3px 3px" />
-          </Card>
-        </DefaultTransition>
       </div>
       <div class="posts">
         <PostsPagination :posts="$currentPathPosts" :key="key" class="post-pagination" />

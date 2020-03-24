@@ -46,6 +46,7 @@ import Gitalk from "@theme/components/Gitalk.vue";
 import TagsLayout from "@theme/layouts/TagsLayout.vue";
 import PostsLayout from "@theme/layouts/PostsLayout.vue";
 import Layout from "@theme/layouts/Layout.vue";
+import IndexLayout from "@theme/layouts/IndexLayout.vue";
 
 export default {
   name: "GlobalLayout",
@@ -58,7 +59,8 @@ export default {
     Gitalk,
     Layout,
     TagsLayout,
-    PostsLayout
+    PostsLayout,
+    IndexLayout
   },
 
   data() {

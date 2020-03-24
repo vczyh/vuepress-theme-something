@@ -1,22 +1,11 @@
 <template>
   <div class="tags">
-    <!-- <el-tag
-      v-for="tag in tags"
-      :key="tag"
-      :type="randomTagType()"
-      size="medium"
-      :hit="true"
-      effect="dark"
-      @click="tagClick(tag)"
-      class="tag"
-    >{{ tag }}</el-tag>-->
-
     <Tag
       v-for="tag in tags"
       :key="tag"
-      :size="size"
       :style="{margin: marginStyle}"
-      :color="randomColor()"
+      :color="getColor()"
+      :type="type"
       @tag-click="tagClick(tag)"
       class="tag"
     >{{ tag }}</Tag>
@@ -33,13 +22,11 @@ export default {
       type: Array,
       required: true
     },
-    size: {
-      type: String,
-      default: "large"
-    },
     marginStyle: {
       type: String
-    }
+    },
+    color: String, // #123,  no param(random color)
+    type: String // dot, no param(default) 
   },
   data() {
     return {
@@ -50,11 +37,15 @@ export default {
   },
 
   methods: {
-    randomTagType() {
-      return this.tagTypes[Math.floor(Math.random() * this.tagTypes.length)];
-    },
+    // randomTagType() {
+    //   return this.tagTypes[Math.floor(Math.random() * this.tagTypes.length)];
+    // },
     randomColor() {
       return this.colors[randomInt(0, this.colors.length - 1)];
+    },
+
+    getColor() {
+      return  this.color ? this.color : this.randomColor()
     },
 
     tagClick(tag) {
