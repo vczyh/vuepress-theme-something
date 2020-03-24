@@ -29,9 +29,6 @@ export default {
     formatDate(date) {
       return formatMonthAndDay(date);
     }
-  },
-  mounted() {
-    console.log(this.$archive)
   }
 };
 </script>

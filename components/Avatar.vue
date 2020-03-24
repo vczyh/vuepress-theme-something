@@ -51,12 +51,17 @@ export default {
       );
     },
     qq() {
-      window.open(`http://wpa.qq.com/msgrd?v=3&uin=${this.$themeConfig.link.qq}&site=qq&menu=yes"`)
+      window.open(
+        `http://wpa.qq.com/msgrd?v=3&uin=${this.$themeConfig.link.qq}&site=qq&menu=yes"`
+      );
     },
     tagClick(current) {
-      sessionStorage.setItem('tag',current)
-      this.$router.push('/tag')
-        console.log(current)
+      sessionStorage.setItem("tag", current);
+      this.$router.push(
+        "/tag",
+        onComplete => {},
+        onAbort => {}
+      );
     }
   }
 };
