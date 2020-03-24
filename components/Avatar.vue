@@ -36,11 +36,11 @@ export default {
   },
   methods: {
     iconClick(link) {
-      console.log(link.link);
+      // console.log(link.link);
       window.open(link.link);
     },
     has(type) {
-      return this.$themeConfig.link[type];
+      return this.$themeConfig.link && this.$themeConfig.link[type];
     },
     github() {
       window.open(this.$themeConfig.link.github);
