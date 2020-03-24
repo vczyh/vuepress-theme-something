@@ -23,7 +23,7 @@ import transitonMixin from "@theme/mixins/transition";
 import deviceMixin from "@theme/mixins/device";
 
 export default {
-  name: "PostLayout",
+  name: "PostsLayout",
   components: {
     PostsPagination,
     Avatar,
@@ -34,7 +34,7 @@ export default {
 
   data() {
     return {
-      key: 0,
+      key: 0
     };
   },
 
