@@ -31,7 +31,5 @@ layout: PostsLayout
 
 ### 其他
 
-vuepress-theme-something 刚刚起步，需要不断完善，之后会一直优化。
-
-另外我也是刚学前端，如有不足，请大家多多指教~
+vuepress-theme-something 刚刚起步，需要不断完善，之后会不断优化，如有不足，请大家多多指教~
 
