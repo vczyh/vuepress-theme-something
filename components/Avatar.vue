@@ -40,19 +40,19 @@ export default {
       window.open(link.link);
     },
     has(type) {
-      return this.$themeConfig.link && this.$themeConfig.link[type];
+      return this.$themeConfig.contact && this.$themeConfig.contact[type];
     },
     github() {
-      window.open(this.$themeConfig.link.github);
+      window.open(this.$themeConfig.contact.github);
     },
     mail() {
       window.open(
-        `mailto:${this.$themeConfig.link.mail}?subject=你好啊！有缘人~`
+        `mailto:${this.$themeConfig.contact.mail}?subject=你好啊！有缘人~`
       );
     },
     qq() {
       window.open(
-        `http://wpa.qq.com/msgrd?v=3&uin=${this.$themeConfig.link.qq}&site=qq&menu=yes"`
+        `http://wpa.qq.com/msgrd?v=3&uin=${this.$themeConfig.contact.qq}&site=qq&menu=yes"`
       );
     },
     tagClick(current) {

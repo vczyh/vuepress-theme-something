@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :key="key">
     <div id="gitalk-container"></div>
   </div>
 </template>
@@ -12,6 +12,7 @@ import md5 from "blueimp-md5";
 export default {
   data() {
     return {
+      key: 0,
       clientID: "",
       clientSecret: "",
       repo: "",
@@ -22,17 +23,28 @@ export default {
     };
   },
 
-  created() {
-    const { themeConfig } = this.$site;
-    this.clientID = themeConfig.clientID;
-    this.clientSecret = themeConfig.clientSecret;
-    this.repo = themeConfig.repo;
-    this.owner = themeConfig.owner;
-    this.admin.push(this.owner);
+  methods: {
+    init() {
+      const { gitalk } = this.$site.themeConfig;
+      gitalk.admin = [gitalk.owner];
+      gitalk.id = md5(location.pathname);
+      gitalk.distractionFreeMode = false;
+      const ele = document.getElementById('gitalk-container')
+      ele.innerHTML= ' '
+      new Gitalk(gitalk).render("gitalk-container");
+      // console.log(location.pathname)
+      // console.log(gitalk)
+    }
   },
 
   mounted() {
-    new Gitalk(this.$data).render("gitalk-container");
+    this.init()
+  },
+
+  watch: {
+    $route(to, from) {
+      this.init()
+    }
   }
 };
 </script>

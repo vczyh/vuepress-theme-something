@@ -3,7 +3,7 @@
     @click="tagClick"
     class="tag medium"
     :style="{'background-color': color,'border-color':color }"
-    :class="{dot: type=='dot' }"
+    :class="{dot: type=='dot', active: active }"
   >
     <slot></slot>
   </span>
@@ -20,11 +20,15 @@ export default {
     type: {
       type: String,
       default: "dark"
+    },
+    active: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      col: "#404040"
+      col: "#404040",
     };
   },
   methods: {
@@ -46,10 +50,15 @@ $height = 1.4rem
   color #fff
   border-radius 4px
   white-space nowrap
-  font-size 0.7rem
+  font-size 0.8rem
   height $height
   line-height $height
 }
+.active {
+  font-size 1rem 
+  height $height 1.5rem
+  line-height $height 1.5rem
+  }
 .dark {
 }
 .dot {

@@ -7,7 +7,7 @@ export function getCurrentPathPosts(posts, path) {
 export function getTags(posts) {
   const tags = []
   for (const post of posts) {
-    const postTags = post.frontmatter.tag;
+    const postTags = post.frontmatter.tags;
     if (postTags) {
       for (const tag of postTags) {
         if (tags.indexOf(tag) == -1) tags.push(tag);
@@ -20,7 +20,7 @@ export function getTags(posts) {
 export function getCurrentTagPosts(posts, tag) {
   if (!tag) return posts
   return posts.filter(post => {
-    const postTags = post.frontmatter.tag
+    const postTags = post.frontmatter.tags
     return postTags && postTags.indexOf(tag) != -1
   })
 }

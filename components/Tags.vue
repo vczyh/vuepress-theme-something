@@ -1,11 +1,20 @@
 <template>
   <div class="tags">
     <Tag
+      v-if="allTag"
+      :style="{margin: marginStyle}"
+      :color="getColor()"
+      :active="'' == currentTag"
+      @tag-click="tagClick('')"
+      class="tag"
+    >全部</Tag>
+    <Tag
       v-for="tag in tags"
       :key="tag"
       :style="{margin: marginStyle}"
       :color="getColor()"
       :type="type"
+      :active="tag == currentTag"
       @tag-click="tagClick(tag)"
       class="tag"
     >{{ tag }}</Tag>
@@ -25,13 +34,21 @@ export default {
     marginStyle: {
       type: String
     },
+    allTag: {
+      type:Boolean,
+      default: false
+    },
+    currentTag: {
+      type: String,
+      default: ''
+    },
     color: String, // #123,  no param(random color)
-    type: String // dot, no param(default) 
+    type: String // dot, no param(default)
   },
   data() {
     return {
       tagTypes: ["", "success", "info", "danger", "warning"],
-      currentTag: "",
+      // currentTag: "",
       colors: ["#409eff", "#67c23a", "#909399", "#f56c6c", "#e6a23c"]
     };
   },
@@ -45,12 +62,13 @@ export default {
     },
 
     getColor() {
-      return  this.color ? this.color : this.randomColor()
+      return this.color ? this.color : this.randomColor();
     },
 
     tagClick(tag) {
+      console.log(tag)
       if (tag !== this.currentTag) {
-        this.currentTag = tag;
+        // this.currentTag = tag;
         this.$emit("click", tag);
       }
     }

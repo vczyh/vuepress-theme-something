@@ -1,15 +1,20 @@
 <template>
-  <div>
+  <div class="post-info">
     <i class="iconfont">
       &#xe672;
       <span>{{date(post.frontmatter.date)}}</span>
     </i>
 
     <i class="iconfont">
-      &#xe660;
+      &#xe623;
       <span>{{post.frontmatter.author || $themeConfig.author}}</span>
     </i>
-    <Tags v-if="showTag && post.frontmatter.tag" :tags="post.frontmatter.tag" marginStyle="0 4px" color="#404040" type="dot"></Tags>
+    <!-- <Tags v-if="showTag && post.frontmatter.tag" :tags="post.frontmatter.tag" marginStyle="0 4px" color="#404040" type="dot"></Tags> -->
+    <i class="iconfont" v-if="showTag && post.frontmatter.tags">
+      &#xe631;
+      <span v-for="tag in post.frontmatter.tags" class="tag">{{tag}}</span>
+    </i>
+
     <!-- <router-link v-show="!mobile" :to="post.path" class="link">查看全文</router-link> -->
   </div>
 </template>
@@ -45,8 +50,10 @@ export default {
 
 <style lang="stylus" scoped>
 // @require '../styles/iconfont.css'
-.tags {
-  display inline-block
+.tag {
+  &:not(:last-child) {
+    margin-right 0.8rem
+  }
 }
 .iconfont {
   display inline-block
@@ -56,8 +63,6 @@ export default {
   }
   span {
     font-size 0.9rem
-    // color #878787
-    // color #7a7a7a
     color #4e6e8e
   }
 }

@@ -31,7 +31,7 @@
     <component v-else :is="layout" />
     <!-- </keep-alive> -->
 
-    <!-- <Gitalk class="theme-default-content" /> -->
+    <!-- <Gitalk class="theme-default-content"/> -->
   </div>
 </template>
 

@@ -2,7 +2,14 @@
   <main class="page">
     <div class="theme-default-content">
       <DefaultTransition delay="0.02">
-        <Tags v-show="showTransition" :tags="$tags" color="#404040" @click="tagClick" />
+        <Tags
+          v-show="showTransition"
+          :tags="$tags"
+          :allTag="true"
+          :currentTag="currentTag"
+          color="#404040"
+          @click="tagClick"
+        />
       </DefaultTransition>
       <!-- <span>{{currentTag}}</span> -->
       <PostsPagination :posts="currentTagPosts" :key="currentTag" />
@@ -36,12 +43,13 @@ export default {
   methods: {
     tagClick(tag) {
       this.currentTag = tag;
+      console.log("dianji ");
     }
   },
   mounted() {
-    this.currentTag = sessionStorage.getItem('tag')
-    sessionStorage.setItem('tag','')
-  },
+    this.currentTag = sessionStorage.getItem("tag");
+    sessionStorage.setItem("tag", "");
+  }
 };
 </script>
 
