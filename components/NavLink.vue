@@ -88,9 +88,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-// @require '../styles/iconfont.css'
 .nav-link{
   font-size 0.9rem
-  font-weight 600
+  font-weight 600 // custom
 }
 </style>

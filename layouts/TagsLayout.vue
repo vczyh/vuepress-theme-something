@@ -2,15 +2,25 @@
   <main class="page">
     <div class="theme-default-content">
       <DefaultTransition delay="0.02">
-        <Tags
-          v-show="showTransition"
-          :tags="$tags"
-          :allTag="true"
-          :currentTag="currentTag"
-          color="#404040"
-          @click="tagClick"
-        />
+        <div v-show="showTransition">
+          <Tags
+            :tags="$tags"
+            :allTag="true"
+            :currentTag="currentTag"
+            color="#404040"
+            @click="tagClick"
+          />
+        </div>
       </DefaultTransition>
+
+      <!-- <Tags
+        :tags="$tags"
+        :allTag="true"
+        :currentTag="currentTag"
+        color="#404040"
+        @click="tagClick"
+      />-->
+
       <!-- <span>{{currentTag}}</span> -->
       <PostsPagination :posts="currentTagPosts" :key="currentTag" />
     </div>
@@ -53,8 +63,8 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-@require '../styles/wrapper.styl'
+<style lang="stylus" scoped>
+// @require '../styles/wrapper.styl'
 
 .page {
   padding-bottom 2rem

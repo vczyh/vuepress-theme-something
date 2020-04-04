@@ -60,7 +60,8 @@ ul {
       margin-left -4px
       width 4px
       height 100%
-      background #faf0e6
+      // background #faf0e6
+      background #808080
     }
     .content {
       white-space nowrap
@@ -78,7 +79,8 @@ ul {
         width 6px
         height 6px
         border-radius 50%
-        background #c28989
+        // background #c28989
+        background #fff
       }
       .date {
         font-size 14px

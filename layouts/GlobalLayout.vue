@@ -43,10 +43,13 @@ import Sidebar from "@theme/components/Sidebar.vue";
 import { resolveSidebarItems } from "@parent-theme/util";
 
 import Gitalk from "@theme/components/Gitalk.vue";
+
 import TagsLayout from "@theme/layouts/TagsLayout.vue";
 import PostsLayout from "@theme/layouts/PostsLayout.vue";
 import Layout from "@theme/layouts/Layout.vue";
 import IndexLayout from "@theme/layouts/IndexLayout.vue";
+import ArchiveLayout from "@theme/layouts/ArchiveLayout.vue";
+import WaterfallLayout from "@theme/layouts/WaterfallLayout.vue";
 
 export default {
   name: "GlobalLayout",
@@ -60,7 +63,9 @@ export default {
     Layout,
     TagsLayout,
     PostsLayout,
-    IndexLayout
+    IndexLayout,
+    ArchiveLayout,
+    WaterfallLayout
   },
 
   data() {

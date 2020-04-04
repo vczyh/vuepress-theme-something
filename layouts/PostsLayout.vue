@@ -34,7 +34,8 @@ export default {
 
   data() {
     return {
-      key: 0
+      key: 0,
+      clientHeight: 0
     };
   },
 
@@ -48,7 +49,7 @@ export default {
     $route(to, from) {
       this.key++;
     }
-  }
+  },
 };
 </script>
 <style lang="stylus" scoped>

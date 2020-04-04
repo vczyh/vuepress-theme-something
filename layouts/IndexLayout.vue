@@ -9,6 +9,7 @@
 <script>
 import transitonMixin from "@theme/mixins/transition";
 export default {
+  name: 'IndexLayout',
   mixins: [transitonMixin]
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div :key="key">
+  <div>
     <div id="gitalk-container"></div>
   </div>
 </template>
@@ -12,20 +12,21 @@ import md5 from "blueimp-md5";
 export default {
   data() {
     return {
-      key: 0,
-      clientID: "",
-      clientSecret: "",
-      repo: "",
-      owner: "",
-      admin: [],
-      id: md5(location.pathname), // Ensure uniqueness and length less than 50
-      distractionFreeMode: false // Facebook-like distraction free mode
+    //   key: 0,
+    //   clientID: "",
+    //   clientSecret: "",
+    //   repo: "",
+    //   owner: "",
+    //   admin: [],
+    //   id: md5(location.pathname), // Ensure uniqueness and length less than 50
+    //   distractionFreeMode: false // Facebook-like distraction free mode
     };
   },
 
   methods: {
     init() {
       const { gitalk } = this.$site.themeConfig;
+      if(!gitalk) return 
       gitalk.admin = [gitalk.owner];
       gitalk.id = md5(location.pathname);
       gitalk.distractionFreeMode = false;
