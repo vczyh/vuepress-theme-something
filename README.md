@@ -1,7 +1,7 @@
 ## 快速开始
 
 ```bash
-npm install vuepress-theme-somethng --save-dev
+npm install vuepress-theme-something --save-dev
 ```
 
 通过 `config.js` 使用主题
