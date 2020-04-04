@@ -24,21 +24,28 @@ export function getCurrentTagPosts(posts, tag) {
     return postTags && postTags.indexOf(tag) != -1
   })
 }
-export function getPosts({ pages, themeConfig }) {
-  const navPaths = getNavPaths(themeConfig.nav)
-  return pages.filter(page => {
-    return navPaths.indexOf(page.path) == -1
-  })
-}
+// export function getPosts1({ pages, themeConfig }) {
+//   const navPaths = getNavPaths(themeConfig.nav)
+//   return pages.filter(page => {
+//     return navPaths.indexOf(page.path) == -1
+//   })
+// }
 
-function getNavPaths(navs) {
-  if (navs.length == 0) return []
-  const paths = []
-  for (const nav of navs) {
-    if (nav.link) paths.push(nav.link)
-    else paths.push(...getNavPaths(nav.items))
-  }
-  return paths
+// function getNavPaths(navs) {
+//   if (navs.length == 0) return []
+//   const paths = []
+//   for (const nav of navs) {
+//     if (nav.link) paths.push(nav.link)
+//     else paths.push(...getNavPaths(nav.items))
+//   }
+//   return paths
+// }
+
+export function getPosts({ pages, themeConfig }) {
+  return pages.filter(page => {
+    const layout = page.frontmatter.layout
+    return (!layout && !page.frontmatter.home) || layout == 'Layout'
+  })
 }
 
 export function sortPostsByDate(posts) {

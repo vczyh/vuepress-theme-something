@@ -14,6 +14,7 @@ export default ({
 }) => {
   // ...做一些其他的应用级别的优化
 
+  console.log(siteData)
   const posts = sortPostsByDate(getPosts(siteData))
   Vue.prototype.$posts = posts
   Vue.prototype.$tags = getTags(posts)
