@@ -7,9 +7,11 @@
 </template>
 
 <script>
+import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
 export default {
-  name: 'IndexLayout',
+  name: "IndexLayout",
+  components: { DefaultTransition },
   mixins: [transitonMixin]
 };
 </script>

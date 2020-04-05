@@ -22,12 +22,13 @@ import PageEdit from "@theme/components/PageEdit.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import PostInfo from "@theme/components/PostInfo.vue";
 import Gitalk from "@theme/components/Gitalk.vue";
+import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
 
 export default {
   name: "Page",
   mixins: [transitonMixin],
-  components: { PageEdit, PageNav, PostInfo, Gitalk },
+  components: { PageEdit, PageNav, PostInfo, Gitalk, DefaultTransition },
   props: ["sidebarItems"]
 };
 </script>

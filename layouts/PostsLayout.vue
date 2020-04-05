@@ -2,9 +2,7 @@
   <main class="page">
     <div :class="themeClass">
       <div v-if="!isMobile" class="info">
-        <DefaultTransition delay="0.02">
-          <Avatar v-show="showTransition" :key="key"></Avatar>
-        </DefaultTransition>
+        <Avatar v-show="showTransition" :key="key"></Avatar>
       </div>
       <div class="posts">
         <PostsPagination :posts="$currentPathPosts" :key="key" class="post-pagination" />
@@ -18,6 +16,7 @@ import PostsPagination from "@theme/components/PostsPagination.vue";
 import Avatar from "@theme/components/Avatar.vue";
 import Tags from "@theme/components/Tags.vue";
 import Card from "@theme/components/Card.vue";
+import DefaultTransition from "@theme/components/DefaultTransition.vue";
 // import { resolveSidebarItems } from "../util";
 import transitonMixin from "@theme/mixins/transition";
 import deviceMixin from "@theme/mixins/device";
@@ -28,7 +27,8 @@ export default {
     PostsPagination,
     Avatar,
     Tags,
-    Card
+    Card,
+    DefaultTransition
   },
   mixins: [transitonMixin, deviceMixin],
 
@@ -52,7 +52,7 @@ export default {
   },
 
   mounted() {
-    this.$forceUpdate()
+    this.$forceUpdate();
   }
 };
 </script>

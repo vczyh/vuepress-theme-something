@@ -25,11 +25,12 @@
 <script>
 import Posts from "@theme/components/Posts.vue";
 import Pagination from "@theme/components/Pagination.vue";
+import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
 
 export default {
   name: "PostsPagination",
-  components: { Posts, Pagination },
+  components: { Posts, Pagination, DefaultTransition },
   mixins: [transitonMixin],
   props: {
     posts: {

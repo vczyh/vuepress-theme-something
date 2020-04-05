@@ -10,9 +10,10 @@
 
 <script>
 import Archive from "@theme/components/Archive.vue";
+import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
 export default {
-  components: { Archive },
+  components: { Archive, DefaultTransition },
   mixins: [transitonMixin]
 };
 </script>

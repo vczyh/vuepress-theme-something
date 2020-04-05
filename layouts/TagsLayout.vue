@@ -12,16 +12,6 @@
           />
         </div>
       </DefaultTransition>
-
-      <!-- <Tags
-        :tags="$tags"
-        :allTag="true"
-        :currentTag="currentTag"
-        color="#404040"
-        @click="tagClick"
-      />-->
-
-      <!-- <span>{{currentTag}}</span> -->
       <PostsPagination :posts="currentTagPosts" :key="currentTag" />
     </div>
   </main>
@@ -30,12 +20,13 @@
 <script>
 import Tags from "@theme/components/Tags.vue";
 import PostsPagination from "@theme/components/PostsPagination.vue";
+import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
 import { getCurrentTagPosts } from "../util/post";
 
 export default {
   name: "TagsLayout",
-  components: { Tags, PostsPagination },
+  components: { Tags, PostsPagination, DefaultTransition },
   mixins: [transitonMixin],
   data() {
     return {
@@ -65,7 +56,6 @@ export default {
 
 <style lang="stylus" scoped>
 // @require '../styles/wrapper.styl'
-
 .page {
   padding-bottom 2rem
   display block
