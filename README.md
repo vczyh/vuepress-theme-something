@@ -3,6 +3,8 @@
 
 ## 快速开始
 
+[![Join the chat at https://gitter.im/vuepress-theme-something/community](https://badges.gitter.im/vuepress-theme-something/community.svg)](https://gitter.im/vuepress-theme-something/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ```bash
 npm install vuepress-theme-something --save-dev
 ```
