@@ -50,6 +50,10 @@ export default {
       this.key++;
     }
   },
+
+  mounted() {
+    this.$forceUpdate()
+  }
 };
 </script>
 <style lang="stylus" scoped>

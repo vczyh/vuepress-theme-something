@@ -14,7 +14,7 @@ export default ({
 }) => {
   // ...做一些其他的应用级别的优化
 
-  console.log(siteData)
+  // console.log(siteData)
   const posts = sortPostsByDate(getPosts(siteData))
   Vue.prototype.$posts = posts
   Vue.prototype.$tags = getTags(posts)
@@ -22,6 +22,15 @@ export default ({
 
   router.beforeEach((to, from, next) => {
     Vue.prototype.$currentPathPosts = getCurrentPathPosts(posts, to.path)
+
+    if (to.path == '/') {
+      const navs = siteData.themeConfig.nav
+      for (const nav of navs) {
+        if (nav.home) {
+          next(nav.link)
+        }
+      }
+    }
     next()
   })
 }
