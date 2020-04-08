@@ -60,7 +60,7 @@ layout: ArchiveLayout
 layout: ArchiveLayout
 pictures:
   - src: http://p.vczyh.com/blog/IMG_1096(20200128-152110).JPG
-  	info: 科比绝杀
+    info: 科比绝杀
   - src: http://p.vczyh.com/blog/IMG_1097(20200128-153100).JPG
   - src: http://p.vczyh.com/blog/IMG_1102.GIF
 ---

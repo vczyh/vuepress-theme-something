@@ -3,9 +3,12 @@
     <slot name="top" />
     <DefaultTransition delay="0.02">
       <div v-show="showTransition" class="theme-default-content">
-        <h2>{{$page.title}}</h2>
+        <h1>{{$page.title}}</h1>
+        <hr />
         <PostInfo :post="$page" :showTag="true"></PostInfo>
         <Content />
+        {{$page.lastUpdated }}
+        {{$page}}
       </div>
     </DefaultTransition>
 
