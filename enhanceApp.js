@@ -14,7 +14,7 @@ export default ({
 }) => {
   // ...做一些其他的应用级别的优化
 
-  // console.log(siteData)
+  console.log(siteData)
   const posts = sortPostsByDate(getPosts(siteData))
   Vue.prototype.$posts = posts
   Vue.prototype.$tags = getTags(posts)
@@ -27,10 +27,18 @@ export default ({
       const navs = siteData.themeConfig.nav
       for (const nav of navs) {
         if (nav.home) {
-          next(nav.link)
+          return next(nav.link)
         }
       }
     }
+
+    // let { dir } = siteData.themeConfig
+    // if (!dir.startsWith('/')) dir = '/' + dir
+    // if (dir.endsWith('/')) dir = dir.slice(0, dir.length - 1)
+    // if (!to.path.startsWith(dir)) {
+    //   return next(dir + to.path)
+    // }
+    
     next()
   })
 }

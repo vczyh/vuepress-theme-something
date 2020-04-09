@@ -16,7 +16,8 @@
     "url": "https://github.com/vczyh/vuepress-theme-something.git"
   },
   "scripts": {
-    "pub": "npm version patch && npm publish"
+    "pub": "npm version patch && npm publish",
+    "push": "node push.js"
   },
   "devDependencies": {
     "vuepress": "^1.3.1"

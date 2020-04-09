@@ -7,8 +7,6 @@
         <hr />
         <PostInfo :post="$page" :showTag="true"></PostInfo>
         <Content />
-        {{$page.lastUpdated }}
-        {{$page}}
       </div>
     </DefaultTransition>
 
