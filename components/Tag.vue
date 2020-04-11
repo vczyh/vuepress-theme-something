@@ -1,9 +1,8 @@
 <template>
   <span
-    @click="tagClick"
     class="tag medium"
     :style="{'background-color': color,'border-color':color }"
-    :class="{dot: type=='dot', active: active }"
+    :class="{active: active }"
   >
     <slot></slot>
   </span>
@@ -17,10 +16,6 @@ export default {
     color: {
       type: String
     },
-    type: {
-      type: String,
-      default: "dark"
-    },
     active: {
       type: Boolean,
       default: false
@@ -28,13 +23,8 @@ export default {
   },
   data() {
     return {
-      col: "#404040",
+      col: "#404040"
     };
-  },
-  methods: {
-    tagClick() {
-      this.$emit("tag-click");
-    }
   }
 };
 </script>
@@ -42,7 +32,7 @@ export default {
 <style lang="stylus" scoped>
 $tag-vertical-padding = 0px
 $tag-horizontal-padding = 8px
-$height = 1.4rem
+$height = 1.3rem
 // $height = $height - 0.1rem
 .tag {
   display inline-block
@@ -55,10 +45,10 @@ $height = 1.4rem
   line-height $height
 }
 .active {
-  font-size 1rem 
-  height $height 1.5rem
-  line-height $height 1.5rem
-  }
+  font-size 0.9rem
+  height 1.5rem
+  line-height 1.5rem
+}
 .dark {
 }
 .dot {

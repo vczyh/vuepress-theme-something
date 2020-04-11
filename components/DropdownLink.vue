@@ -6,7 +6,10 @@
       :aria-label="dropdownAriaLabel"
       @click="setOpen(!open)"
     >
-      <span class="title iconfont" :class="item.icon">{{ item.text }}</span>
+      <!-- <span class="title iconfont" :class="item.icon">{{ item.text }}</span> -->
+      <i class="title iconfont" :class="item.icon">
+        <span style="margin-left: 5px">{{ item.text }}</span>
+      </i>
       <span class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 

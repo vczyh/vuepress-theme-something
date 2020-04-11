@@ -1,21 +1,16 @@
 <template>
   <div class="post-info">
-    <i class="iconfont">
-      &#xe672;
+    <i class="iconfont iconshijian">
       <span>{{date(post.frontmatter.date)}}</span>
     </i>
 
-    <i class="iconfont">
-      &#xe623;
+    <i class="iconfont iconxingmingyonghumingnicheng">
       <span>{{post.frontmatter.author || $themeConfig.author}}</span>
     </i>
     <!-- <Tags v-if="showTag && post.frontmatter.tag" :tags="post.frontmatter.tag" marginStyle="0 4px" color="#404040" type="dot"></Tags> -->
-    <i class="iconfont" v-if="showTag && post.frontmatter.tags">
-      &#xe631;
-      <span v-for="tag in post.frontmatter.tags" class="tag">{{tag}}</span>
+    <i class="iconfont iconbiaoqian1" v-if="showTag && post.frontmatter.tags">
+      <span v-for="tag in post.frontmatter.tags" @click="tagClick(tag)" class="tag">{{tag}}</span>
     </i>
-
-    <!-- <router-link v-show="!mobile" :to="post.path" class="link">查看全文</router-link> -->
   </div>
 </template>
 
@@ -35,14 +30,13 @@ export default {
       default: false
     }
   },
-  computed: {
-    mobile() {
-      return navigator.userAgent.search(/(iPhone|iPad)/i) != -1;
-    }
-  },
   methods: {
     date(date) {
       return formatDate(date);
+    },
+    tagClick(tag) {
+      this.$router.push(`/tags/?tag=${tag}`);
+      this.$store.setCurrentPageAction(1);
     }
   }
 };
@@ -50,28 +44,24 @@ export default {
 
 <style lang="stylus" scoped>
 // @require '../styles/iconfont.css'
-.tag {
-  &:not(:last-child) {
-    margin-right 0.8rem
-  }
-}
-.iconfont {
-  display inline-block
-  line-height 1.5rem
-  &:not(:last-child) {
-    margin-right 2rem
-  }
-  span {
+.post-info {
+  .iconfont {
+    display inline-block
+    line-height 1.5rem
     font-size 0.9rem
-    color #4e6e8e
+    &:not(:last-child) {
+      margin-right 2rem
+    }
+    span {
+      margin-left 5px
+      color #4e6e8e
+      &.tag {
+        &:not(:last-child) {
+          margin-right 0.8rem
+        }
+        cursor pointer
+      }
+    }
   }
-}
-.link {
-  float right
-  display inline-block
-  line-height 1.5rem
-  text-decoration none
-  color #878787
-  font-size 0.9rem
 }
 </style>

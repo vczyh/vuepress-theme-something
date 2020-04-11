@@ -49,10 +49,6 @@ export default {
     $route(to, from) {
       this.key++;
     }
-  },
-
-  mounted() {
-    this.$forceUpdate();
   }
 };
 </script>

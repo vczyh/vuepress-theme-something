@@ -14,7 +14,7 @@ export default {
       document.head.appendChild(script);
     }
   },
-  created() {
+  mounted() {
     this.init();
   }
 };

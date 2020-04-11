@@ -27,6 +27,7 @@ import Posts from "@theme/components/Posts.vue";
 import Pagination from "@theme/components/Pagination.vue";
 import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
+// import store from "@theme/store";
 
 export default {
   name: "PostsPagination",
@@ -52,20 +53,31 @@ export default {
   },
   data() {
     return {
-      currentPage: this.initCurrentPage,
+      // currentPage: this.initCurrentPage,
+      currentPage: this.$store.state.currentPage,
       key: 0
     };
   },
   methods: {
     currentChange(current) {
       this.currentPage = current;
-      // window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     }
   },
   watch: {
     currentPage() {
       this.key++;
+      // sessionStorage.setItem("currentPage", this.currentPage);
+      this.$store.setCurrentPageAction(this.currentPage);
     }
+  },
+  mounted() {
+    // sessionStorage.setItem("path", this.$route.path);
+    // const currentPage = sessionStorage.getItem("currentPage");
+    // if (currentPage) {
+    //   this.currentPage = Number(currentPage);
+    // }
+
   }
 };
 </script>

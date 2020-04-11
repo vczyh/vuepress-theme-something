@@ -2,15 +2,10 @@
   <main class="page">
     <div class="theme-default-content">
       <DefaultTransition delay="0.02">
-        <div v-show="showTransition">
-          <Tags
-            :tags="$tags"
-            :allTag="true"
-            :currentTag="currentTag"
-            color="#404040"
-            @click="tagClick"
-          />
+        <div v-show="showTransition" class="tags-container">
+          <Tags :tags="$tags" :allTag="true" :currentTag="currentTag" @tag-click="tagClick" />
         </div>
+        <!-- color="#404040" -->
       </DefaultTransition>
       <PostsPagination :posts="currentTagPosts" :key="currentTag" />
     </div>
@@ -23,34 +18,37 @@ import PostsPagination from "@theme/components/PostsPagination.vue";
 import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
 import { getCurrentTagPosts } from "../util/post";
+import { getNavPaths } from "@theme/util/post";
 
 export default {
   name: "TagsLayout",
   components: { Tags, PostsPagination, DefaultTransition },
   mixins: [transitonMixin],
-  data() {
-    return {
-      currentTag: "",
-      posts: []
-    };
-  },
 
   computed: {
     currentTagPosts() {
-      return getCurrentTagPosts(this.$posts, this.currentTag);
+      return getCurrentTagPosts(
+        this.$posts,
+        this.currentTag == "all" ? "" : this.currentTag
+      );
+    },
+    currentTag() {
+      // return this.$route.query.tag ? this.$route.query.tag : "all";
+      
+      return this.$route.query.tag;
     }
   },
 
   methods: {
     tagClick(tag) {
-      this.currentTag = tag;
-      console.log("dianji ");
+      this.goTags(tag);
+      // sessionStorage.setItem("currentPage", 1);
+      this.$store.setCurrentPageAction(1);
     }
   },
+
   mounted() {
-    this.currentTag = sessionStorage.getItem("tag");
-    sessionStorage.setItem("tag", "");
-  }
+  },
 };
 </script>
 
@@ -59,5 +57,8 @@ export default {
 .page {
   padding-bottom 2rem
   display block
+}
+.tags-container {
+  margin-bottom 2rem
 }
 </style>

@@ -27,7 +27,9 @@ export default {
   font-size 1.2rem
   .link {
     color #2c3e50
-    text-decoration none
+    &:hover {
+      text-decoration underline
+    }
   }
 }
 </style>

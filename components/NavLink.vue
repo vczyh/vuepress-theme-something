@@ -1,12 +1,15 @@
 <template>
   <RouterLink
     v-if="isInternal"
-    class="nav-link iconfont"
-    :class="item.icon"
+    class="nav-link"
     :to="link"
     :exact="exact"
     @focusout.native="focusoutAction"
-  >{{ item.text }}</RouterLink>
+  >
+    <i class="iconfont" :class="item.icon">
+      <span>{{ item.text }}</span>
+    </i>
+  </RouterLink>
   <a
     v-else
     :href="link"
@@ -88,8 +91,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.nav-link{
-  font-size 0.9rem
-  font-weight 600 // custom
+.nav-link {
+  .iconfont {
+    font-size 0.9rem
+    font-weight 600 // custom
+    span {
+      margin-left 5px
+    }
+  }
 }
 </style>

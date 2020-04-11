@@ -31,15 +31,15 @@ export function getCurrentTagPosts(posts, tag) {
 //   })
 // }
 
-// function getNavPaths(navs) {
-//   if (navs.length == 0) return []
-//   const paths = []
-//   for (const nav of navs) {
-//     if (nav.link) paths.push(nav.link)
-//     else paths.push(...getNavPaths(nav.items))
-//   }
-//   return paths
-// }
+export function getNavPaths(navs) {
+  if (navs.length == 0) return []
+  const paths = []
+  for (const nav of navs) {
+    if (nav.link) paths.push(nav.link)
+    else paths.push(...getNavPaths(nav.items))
+  }
+  return paths
+}
 
 export function getPosts({ pages, themeConfig }) {
   return pages.filter(page => {

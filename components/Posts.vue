@@ -42,6 +42,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.card
+.card {
   margin-bottom 20px
+}
 </style>

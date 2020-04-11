@@ -17,7 +17,7 @@
         </div>
       </div>
       <hr />
-      <Tags :tags="$tags" color="#404040" @click="tagClick" marginStyle="3px 3px" />
+      <Tags :tags="$tags" @tag-click="tagClick" marginStyle="3px 3px" />
     </Card>
   </DefaultTransition>
 </template>
@@ -62,12 +62,8 @@ export default {
       );
     },
     tagClick(current) {
-      sessionStorage.setItem("tag", current);
-      this.$router.push(
-        "/tag",
-        onComplete => {},
-        onAbort => {}
-      );
+      this.$store.setCurrentPageAction(1);
+      this.$router.push(`/tags/?tag=${current}`)
     }
   }
 };
