@@ -2,7 +2,7 @@
   <transition name="back-to-top-fade">
     <div
       class="vue-back-to-top"
-      :style="`bottom:${this.bottom};right:${this.right};`"
+      :style="{bottom: bottom, right: right}"
       v-show="visible"
       @click="backToTop"
     >
