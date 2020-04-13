@@ -19,19 +19,8 @@
     </Sidebar>
 
     <Home v-if="$page.frontmatter.home" />
-    <!-- <Page v-else :sidebar-items="sidebarItems">
-      <template #top>
-        <slot name="page-top" />
-      </template>
-      <template #bottom>
-        <slot name="page-bottom" />
-      </template>
-    </Page>-->
-    <!-- <keep-alive> -->
     <component v-else :is="layout" />
-    <!-- </keep-alive> -->
-
-    <!-- <Gitalk class="theme-default-content"/> -->
+    <back-to-top></back-to-top>
   </div>
 </template>
 
@@ -40,9 +29,9 @@ import Home from "@theme/components/Home.vue";
 import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
-import { resolveSidebarItems } from "@parent-theme/util";
+import BackToTop from "@theme/components/BackToTop.vue";
 
-import Gitalk from "@theme/components/Gitalk.vue";
+import { resolveSidebarItems } from "@parent-theme/util";
 
 import TagsLayout from "@theme/layouts/TagsLayout.vue";
 import PostsLayout from "@theme/layouts/PostsLayout.vue";
@@ -59,7 +48,7 @@ export default {
     Page,
     Sidebar,
     Navbar,
-    Gitalk,
+    BackToTop,
     Layout,
     TagsLayout,
     PostsLayout,

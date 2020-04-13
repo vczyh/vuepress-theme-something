@@ -60,8 +60,11 @@ export default {
   },
   methods: {
     currentChange(current) {
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
       this.currentPage = current;
-      window.scrollTo(0, 0);
     }
   },
   watch: {
@@ -77,7 +80,6 @@ export default {
     // if (currentPage) {
     //   this.currentPage = Number(currentPage);
     // }
-
   }
 };
 </script>
