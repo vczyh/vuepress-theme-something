@@ -2,6 +2,7 @@ import {
   getPosts,
   getTags,
   getCurrentPathPosts,
+  getCurrentPathTags,
   getArchive,
   sortPostsByDate,
   getNavPaths
@@ -35,6 +36,7 @@ export default ({
   router.beforeEach((to, from, next) => {
     // 和页面有关的元数据
     Vue.prototype.$currentPathPosts = getCurrentPathPosts(posts, to.path)
+    Vue.prototype.$currentPathTags = getCurrentPathTags(posts, to.path)
 
     // 根路径重定向
     if (to.path == '/') {
@@ -79,7 +81,7 @@ export default ({
     // if (!to.path.startsWith(dir)) {
     //   return next(dir + to.path)
     // }
-
+  
     next()
   })
 }

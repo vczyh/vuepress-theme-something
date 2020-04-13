@@ -60,10 +60,10 @@ export default {
   },
   methods: {
     currentChange(current) {
-      window.scrollTo({
-        top: 0,
-        behavior: "instant"
-      });
+      // window.scrollTo({
+      //   top: 0,
+      //   behavior: "instant"
+      // });
       this.currentPage = current;
     }
   },

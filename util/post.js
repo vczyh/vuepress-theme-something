@@ -1,7 +1,12 @@
 import { getTimeStamp } from "../util/common"
 
 export function getCurrentPathPosts(posts, path) {
-  return posts = posts.filter(post => post.path.startsWith(path));
+  return posts.filter(post => post.path.startsWith(path));
+}
+
+export function getCurrentPathTags(posts, path) {
+  const currentPathPosts = getCurrentPathPosts(posts, path)
+  return getTags(currentPathPosts)
 }
 
 export function getTags(posts) {
@@ -44,7 +49,8 @@ export function getNavPaths(navs) {
 export function getPosts({ pages, themeConfig }) {
   return pages.filter(page => {
     const layout = page.frontmatter.layout
-    return (!layout && !page.frontmatter.home) || layout == 'Layout'
+    const post = page.frontmatter.post
+    return (!layout || layout === 'Layout') && !page.frontmatter.home && (post === undefined || post)
   })
 }
 

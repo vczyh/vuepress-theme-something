@@ -1,13 +1,14 @@
 <template>
   <main class="page">
     <slot name="top" />
-    <DefaultTransition delay="0.02">
-      <div v-show="showTransition" class="theme-default-content">
-        <h1>{{$page.title}}</h1>
-        <hr />
-        <PostInfo :post="$page" :showTag="true"></PostInfo>
-        <Content />
-      </div>
+    <div class="theme-default-content">
+      <h1>{{$page.title}}</h1>
+      <hr />
+      <PostInfo :post="$page" :showTag="true"></PostInfo>
+    </div>
+
+    <DefaultTransition delay="0.1">
+      <Content v-show="showTransition" class="theme-default-content" />
     </DefaultTransition>
 
     <PageEdit />
@@ -34,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 // @require '../styles/wrapper.styl';
 .page {
   padding-bottom 2rem

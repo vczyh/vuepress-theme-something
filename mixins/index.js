@@ -24,6 +24,13 @@ export default {
     // }
   },
 
+  mounted() {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+  },
+
   watch: {
     // $route(to, from) {
     //   // 保存分页信息

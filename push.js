@@ -1,4 +1,5 @@
 const shell = require('shelljs')
 
-shell.exec(`git add -A && git commit -m '${process.argv[2]}'`)
+// console.log(process.argv[2])
+shell.exec(`git add -A && git commit -m \"${process.argv[2]}\"`)
 shell.exec('git push')

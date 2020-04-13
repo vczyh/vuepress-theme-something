@@ -9,15 +9,15 @@
       <div class="posts-info">
         <div class="posts-info-item">
           <div class="iconfont">文章</div>
-          <div class="number">{{$posts.length}}</div>
+          <div class="number">{{$currentPathPosts.length}}</div>
         </div>
         <div class="posts-info-item">
           <div class="iconfont">标签</div>
-          <div class="number">{{$tags.length}}</div>
+          <div class="number">{{$currentPathTags.length}}</div>
         </div>
       </div>
       <hr />
-      <Tags :tags="$tags" @tag-click="tagClick" marginStyle="3px 3px" />
+      <Tags :tags="$currentPathTags" @tag-click="tagClick" marginStyle="3px 3px" />
     </Card>
   </DefaultTransition>
 </template>

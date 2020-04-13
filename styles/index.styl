@@ -93,6 +93,11 @@ body
   img
     max-width 100%
 
+// custom
+{$contentClass}
+  &:first-child
+    margin-bottom: -4rem
+
 a
   font-weight 500
   color $accentColor
@@ -137,6 +142,7 @@ h1, h2, h3, h4, h5, h6
 
     &:first-child
       margin-top -1.5rem
+      // margin-top 0 // cusotm
       margin-bottom 1rem
 
       + p, + pre, + .custom-block
