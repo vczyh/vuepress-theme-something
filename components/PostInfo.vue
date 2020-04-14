@@ -7,7 +7,15 @@
     <i class="iconfont iconxingmingyonghumingnicheng">
       <span>{{post.frontmatter.author || $themeConfig.author}}</span>
     </i>
-    <!-- <Tags v-if="showTag && post.frontmatter.tag" :tags="post.frontmatter.tag" marginStyle="0 4px" color="#404040" type="dot"></Tags> -->
+
+    <i
+      v-if="$site.themeConfig.valine && showCount"
+      :id="$route.path"
+      class="iconfont iconyuedushu leancloud_visitors"
+    >
+      <span class="leancloud-visitors-count"></span>
+    </i>
+
     <i class="iconfont iconbiaoqian1" v-if="showTag && post.frontmatter.tags">
       <span v-for="tag in post.frontmatter.tags" @click="tagClick(tag)" class="tag">{{tag}}</span>
     </i>
@@ -26,6 +34,10 @@ export default {
       required: true
     },
     showTag: {
+      type: Boolean,
+      default: false
+    },
+    showCount: {
       type: Boolean,
       default: false
     }

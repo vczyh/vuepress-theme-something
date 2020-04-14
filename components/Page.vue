@@ -4,7 +4,7 @@
     <div class="theme-default-content">
       <h1>{{$page.title}}</h1>
       <hr />
-      <PostInfo :post="$page" :showTag="true"></PostInfo>
+      <PostInfo :post="$page" :showTag="true" :showCount="true"></PostInfo>
     </div>
 
     <DefaultTransition delay="0.1">
