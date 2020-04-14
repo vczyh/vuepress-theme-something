@@ -41,7 +41,6 @@ export default {
 
   watch: {
     "$route.path": function(to, from) {
-      console.log("gitalk path changed");
       this.init();
     }
   }

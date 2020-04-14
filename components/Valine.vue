@@ -3,6 +3,7 @@
 </template>
 
 <script>
+// import AV from "@theme/util/leancloud";
 // import AV from "leancloud-storage";
 // const Valine = require("valine");
 
@@ -26,7 +27,6 @@ export default {
   },
   watch: {
     "$route.path": function(to, from) {
-      console.log("valine path changed");
       this.init();
     }
   }
