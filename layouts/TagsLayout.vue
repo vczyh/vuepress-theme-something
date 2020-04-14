@@ -33,8 +33,6 @@ export default {
       );
     },
     currentTag() {
-      // return this.$route.query.tag ? this.$route.query.tag : "all";
-      
       return this.$route.query.tag;
     }
   },
@@ -42,7 +40,6 @@ export default {
   methods: {
     tagClick(tag) {
       this.goTags(tag);
-      // sessionStorage.setItem("currentPage", 1);
       this.$store.setCurrentPageAction(1);
     }
   },

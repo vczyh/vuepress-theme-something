@@ -11,15 +11,9 @@ module.exports = (options, ctx) => ({
   plugins: {
     '@vuepress/medium-zoom': {
       selector: '',
-      // medium-zoom options here
-      // See: https://github.com/francoischalifour/medium-zoom#options
       options: {
         margin: 16
       }
     }
   }
-  // alias() {
-  //   const { themeConfig, siteConfig } = ctx
-  //   themeConfig.sidebar
-  // }
 })

@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div id="gitalk-container"></div>
-  </div>
+  <div v-if="$site.themeConfig.gitalk" id="gitalk-container"></div>
 </template>
 
 <script>
@@ -25,16 +23,14 @@ export default {
 
   methods: {
     init() {
-      const { gitalk } = this.$site.themeConfig;
-      if (!gitalk) return;
+      const gitalk = this.$site.themeConfig.gitalk;
       gitalk.admin = [gitalk.owner];
       gitalk.id = md5(location.pathname);
       gitalk.distractionFreeMode = false;
-      const ele = document.getElementById("gitalk-container");
-      ele.innerHTML = " ";
+      // 删除子元素 重新渲染
+      const el = document.getElementById("gitalk-container");
+      el.innerHTML = " ";
       new Gitalk(gitalk).render("gitalk-container");
-      // console.log(location.pathname)
-      // console.log(gitalk)
     }
   },
 
@@ -44,6 +40,7 @@ export default {
 
   watch: {
     "$route.path": function(to, from) {
+      console.log("gitalk path changed");
       this.init();
     }
   }
