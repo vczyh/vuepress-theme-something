@@ -1,27 +1,27 @@
 <template>
-  <div v-if="$site.themeConfig.valine" id="vcomments"></div>
+  <div v-if="$site.themeConfig.valine" id="vcomments" />
 </template>
 
 <script>
-import Valine from "valine";
-import AV from "leancloud-storage";
+// import AV from "leancloud-storage";
+// const Valine = require("valine");
+
 export default {
   name: "Valine",
-  data() {
-    return {
-      // valine: {}
-    };
-  },
   methods: {
     init() {
+      const Valine = require("valine");
       let valine = this.$site.themeConfig.valine;
+      if (!valine) return;
       valine.el = "#vcomments";
-      valine.path = window.location.pathname;
+      valine.path = location.pathname;
       new Valine(valine);
     }
   },
   mounted() {
-    if (!window.AV) window.AV = AV;
+    if (!window.AV) {
+      window.AV = require("leancloud-storage");
+    }
     this.init();
   },
   watch: {

@@ -9,7 +9,7 @@
     </i>
 
     <i
-      v-if="$site.themeConfig.valine && showCount"
+      v-if="$site.themeConfig.valine && $site.themeConfig.valine.visitor && showCount"
       :id="$route.path"
       class="iconfont iconyuedushu leancloud_visitors"
     >

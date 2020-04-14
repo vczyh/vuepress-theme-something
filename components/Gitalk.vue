@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$site.themeConfig.gitalk" id="gitalk-container"></div>
+  <div v-if="$site.themeConfig.gitalk" id="gitalk-container" />
 </template>
 
 <script>
@@ -24,6 +24,7 @@ export default {
   methods: {
     init() {
       const gitalk = this.$site.themeConfig.gitalk;
+      if (!gitalk) return;
       gitalk.admin = [gitalk.owner];
       gitalk.id = md5(location.pathname);
       gitalk.distractionFreeMode = false;
