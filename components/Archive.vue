@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div class="timeline-wrapper">
+    <ul>
+      <li>
+        <div class="info">共 {{$posts.length}} 篇文章~</div>
+      </li>
+    </ul>
     <ul v-for="item in $archive">
       <li>
         <span class="year">{{item.year}}</span>
@@ -35,19 +40,22 @@ export default {
 
 <style lang="stylus" scoped>
 /* @require '../styles/iconfont.css' */
+.timeline-wrapper {
+  padding 10px 120px
+}
 ul {
   list-style none
   margin 0
   padding 0
   position relative
   .year {
-    display inline-block
-    font-weight 500
-    font-size 1.2rem
-    margin-left 20px
-    line-height 30px
-    margin-top 20px
-    // border-bottom 1px dashed #c0c0c0
+  display inline-block
+  font-weight 500
+  font-size 1.5rem
+  margin-left 20px
+  line-height 50px
+  // margin-top 20px
+  // border-bottom 1px dashed #c0c0c0
   }
   li {
     position relative
@@ -67,8 +75,8 @@ ul {
       white-space nowrap
       line-height 30px
       margin-left 20px
-      border-bottom 1px dashed #c0c0c0
-      padding 10px 0 10px 0
+      // border-bottom 1px dashed #c0c0c0
+      padding 10px 0
       &::before {
         content ''
         position absolute
@@ -83,12 +91,32 @@ ul {
         background #fff
       }
       .date {
-        font-size 14px
+        font-size 0.9rem
         color #9a9a9a
       }
       .title {
         margin-left 10px
-        color #000
+        color #707477
+      }
+    }
+    .info {
+      white-space nowrap
+      font-size 17px
+      line-height 30px
+      margin-left 20px
+      padding 10px 0
+      &::before {
+        content ''
+        position absolute
+        top 22px
+        left 0
+        margin-left -5px
+        z-index auto
+        width 6px
+        height 6px
+        border-radius 50%
+        // background #c28989
+        background #fff
       }
     }
   }

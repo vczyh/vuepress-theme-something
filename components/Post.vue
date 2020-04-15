@@ -1,7 +1,13 @@
 <template>
   <Card class="post">
     <div class="title">
-      <router-link :to="post.path" class="link">{{ post.title }}</router-link>
+      <router-link
+        :to="post.path"
+        @mouseover.native="over"
+        @mouseout.native="out"
+        :class="{underline: underline}"
+        class="link"
+      >{{ post.title }}</router-link>
     </div>
     <div class="excerpt" v-html="post.excerpt"></div>
     <hr />
@@ -15,20 +21,37 @@ import Card from "@theme/components/Card.vue";
 export default {
   name: "Post",
   components: { Card, PostInfo },
-  props: ["post"]
+  props: ["post"],
+  data() {
+    return {
+      underline: false
+    };
+  },
+  methods: {
+    over() {
+      this.underline = true;
+    },
+    out() {
+      this.underline = false;
+    }
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
 .post {
-  padding 16px 20px
+  padding 18px 20px
+}
+.underline {
+  border-bottom 1.5px solid #707477
+  padding-bottom 1px
 }
 .title {
-  font-size 1.2rem
+  font-size 1.22rem
   .link {
     color #2c3e50
     &:hover {
-      text-decoration underline
+      text-decoration none
     }
   }
 }

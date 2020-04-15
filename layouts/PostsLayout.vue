@@ -62,7 +62,7 @@ export default {
   display flex
   justify-content center
   width 100%
-  margin-top 6rem
+  margin-top 7rem
   .info {
     display flex
     width 300px

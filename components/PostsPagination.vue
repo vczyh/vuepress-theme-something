@@ -17,6 +17,7 @@
         :key="key"
         @current-change="currentChange"
         v-show="showTransition"
+        class="pagination"
       ></Pagination>
     </DefaultTransition>
   </div>
@@ -83,4 +84,9 @@ export default {
   }
 };
 </script>
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.pagination {
+  margin-top 4rem
+  margin-bottom 3rem
+}
+</style>

@@ -60,6 +60,7 @@ export default {
   .iconfont {
     display inline-block
     line-height 1.5rem
+    height 1.5rem
     font-size 0.9rem
     &:not(:last-child) {
       margin-right 2rem

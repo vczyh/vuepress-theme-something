@@ -94,9 +94,9 @@ body
     max-width 100%
 
 // custom
-{$contentClass}
-  &:first-child
-    margin-bottom: -4rem
+// {$contentClass}
+//   &:first-child
+//     padding-bottom: 0
 
 a
   font-weight 500
@@ -132,17 +132,16 @@ strong
 
 h1, h2, h3, h4, h5, h6
   // font-weight 600
-  font-weight: 500
+  font-weight: 500  // custom
   line-height 1.25
 
   {$contentClass}:not(.custom) > &
     margin-top (0.5rem - $navbarHeight)
-    padding-top ($navbarHeight + 1rem)
+    padding-top ($navbarHeight + 1rem) 
     margin-bottom 0
 
     &:first-child
       margin-top -1.5rem
-      // margin-top 0 // cusotm
       margin-bottom 1rem
 
       + p, + pre, + .custom-block
@@ -152,7 +151,8 @@ h1, h2, h3, h4, h5, h6
     opacity: 1
 
 h1
-  font-size 2.2rem
+  // font-size 2.2rem
+  font-size 1.85rem // custom
 
 h2
   font-size 1.65rem
@@ -222,3 +222,26 @@ th, td
       padding-left 0
 
 @require 'mobile.styl'
+
+
+.v 
+  .vwrap 
+    border: 1.5px solid #a9a9a9 !important
+    .vheader 
+      .vinput 
+        width: 33.33%;
+        border-bottom: 1.5px solid #a9a9a9 !important
+  .vbtn
+    background: #a9a9a9 !important
+  .vsys
+    color: #646464 !important
+  .vcards 
+    .vcard 
+      .vh 
+        .vtime
+          color: #646464 !important
+      .vcontent
+        // background-color: #e3e3e3
+        
+
+

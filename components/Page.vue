@@ -1,14 +1,17 @@
 <template>
   <main class="page">
     <slot name="top" />
-    <div class="theme-default-content">
+    <div class="theme-default-content info">
       <h1>{{$page.title}}</h1>
       <hr />
       <PostInfo :post="$page" :showTag="true" :showCount="true"></PostInfo>
+      <!-- <DefaultTransition delay="0.1">
+        <Content v-show="showTransition"/>
+      </DefaultTransition>-->
     </div>
 
     <DefaultTransition delay="0.1">
-      <Content v-show="showTransition" class="theme-default-content" />
+      <Content v-show="showTransition" class="theme-default-content content" />
     </DefaultTransition>
 
     <PageEdit />
@@ -51,5 +54,12 @@ export default {
 .page {
   padding-bottom 2rem
   display block
+  .info {
+    padding-top 2.5rem
+    padding-bottom 0
+  }
+  .content {
+    padding-top 1.1rem
+  }
 }
 </style>

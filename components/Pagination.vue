@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul v-show="paginationShow" :style="{'text-align' : align}">
-      <li :class="{ht : preDisabled}" @click="pre()">上一页</li>
+      <li :class="{ht : preDisabled}" @click="pre()">Pre</li>
       <li :class="{active : activePage == 1}" @click="active(1)">1</li>
       <li v-show="preMore">...</li>
 
@@ -14,7 +14,7 @@
 
       <li v-show="nextMore">...</li>
       <li :class="{active : activePage == pages}" @click="active(pages)">{{pages}}</li>
-      <li :class="{ht : nextDisabled}" @click="next()">下一页</li>
+      <li :class="{ht : nextDisabled}" @click="next()">Next</li>
     </ul>
   </div>
 </template>
@@ -170,23 +170,27 @@ ul {
     cursor pointer
     min-width 30px
     font-size 13px
+    font-weight 600
     display inline-block
     line-height 28px
     height 28px
     padding 0 4px
     box-sizing border-box
-    border 1px solid #ddd
+    // border 1px solid #ddd
     background-color #fff
     margin 0 5px
     text-align center
     border-radius 0.25rem
+    box-shadow 0 2px 12px 0 rgba(0, 0, 0, 0.2)
     &:hover {
-      box-shadow 0 2px 16px 0 rgba(0, 0, 0, 0.2)
+      box-shadow 0 2px 16px 0 rgba(0, 0, 0, 0.4)
     }
     &.active {
       color #fff
-      background-color #337ab7
-      border-color #337ab7
+      // background-color #337ab7
+      background-color #3eaf7c
+      // border-color #337ab7
+      border-color #3eaf7c
     }
     &.ht {
       cursor default
