@@ -49,13 +49,13 @@ ul {
   padding 0
   position relative
   .year {
-  display inline-block
-  font-weight 500
-  font-size 1.5rem
-  margin-left 20px
-  line-height 50px
-  // margin-top 20px
-  // border-bottom 1px dashed #c0c0c0
+    display inline-block
+    font-weight 500
+    font-size 1.5rem
+    margin-left 20px
+    line-height 50px
+    // margin-top 20px
+    // border-bottom 1px dashed #c0c0c0
   }
   li {
     position relative
@@ -97,6 +97,9 @@ ul {
       .title {
         margin-left 10px
         color #707477
+        &:hover {
+          color $accentColor
+        }
       }
     }
     .info {

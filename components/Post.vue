@@ -43,13 +43,15 @@ export default {
   padding 18px 20px
 }
 .underline {
-  border-bottom 1.5px solid #707477
-  padding-bottom 1px
+  // border-bottom 1.5px solid #707477
+  border-bottom 1.5px solid $accentColor
+  padding-bottom 2px
 }
 .title {
-  font-size 1.22rem
+  font-size 1.25rem
   .link {
-    color #2c3e50
+    // color #2c3e50
+    color $accentColor
     &:hover {
       text-decoration none
     }

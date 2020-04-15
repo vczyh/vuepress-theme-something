@@ -1,6 +1,6 @@
 <template>
   <span
-    class="tag medium"
+    class="tag"
     :style="{'background-color': color,'border-color':color }"
     :class="{active: active }"
   >
@@ -32,7 +32,7 @@ export default {
 <style lang="stylus" scoped>
 $tag-vertical-padding = 0px
 $tag-horizontal-padding = 8px
-$height = 1.5rem
+$height = 1.45rem
 // $height = $height - 0.1rem
 .tag {
   display inline-block

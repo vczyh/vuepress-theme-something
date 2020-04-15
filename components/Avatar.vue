@@ -6,18 +6,19 @@
         <i v-if="has('mail')" class="iconfont link" @click="mail">&#xe61c;</i>
         <i v-if="has('qq')" class="iconfont link" @click="qq">&#xe603;</i>
       </div>
+      <!-- <hr /> -->
       <div class="posts-info">
         <div class="posts-info-item">
-          <div class="iconfont">文章</div>
+          <div>文章</div>
           <div class="number">{{$currentPathPosts.length}}</div>
         </div>
         <div class="posts-info-item">
-          <div class="iconfont">标签</div>
+          <div>标签</div>
           <div class="number">{{$currentPathTags.length}}</div>
         </div>
       </div>
       <hr />
-      <Tags :tags="$currentPathTags" @tag-click="tagClick" marginStyle="3px 3px" />
+      <Tags :tags="$currentPathTags" @tag-click="tagClick" marginStyle="4px 3.5px" class="tags" />
     </Card>
   </DefaultTransition>
 </template>
@@ -63,7 +64,7 @@ export default {
     },
     tagClick(current) {
       this.$store.setCurrentPageAction(1);
-      this.$router.push(`/tags/?tag=${current}`)
+      this.$router.push(`/tags/?tag=${current}`);
     }
   }
 };
@@ -85,17 +86,19 @@ export default {
     justify-content center
     .posts-info-item {
       padding 20px 30px
+      font-size 1.1rem
+      font-weight 500
       text-align center
-      .iconfont {
-        font-size 15px
-        font-weight 600
-        margin-bottom 8px
-      }
+      // font-weight 600
       .number {
         font-size 1.2rem
+        margin-top 10px
         font-weight 500
       }
     }
+  }
+  .tags {
+    margin-top 20px
   }
 }
 </style>

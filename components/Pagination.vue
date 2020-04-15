@@ -187,10 +187,8 @@ ul {
     }
     &.active {
       color #fff
-      // background-color #337ab7
-      background-color #3eaf7c
-      // border-color #337ab7
-      border-color #3eaf7c
+      background-color $accentColor
+      border-color $accentColor
     }
     &.ht {
       cursor default
