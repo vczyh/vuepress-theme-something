@@ -10,7 +10,7 @@
       >{{ post.title }}</router-link>
     </div>
     <div class="excerpt" v-html="post.excerpt"></div>
-    <hr />
+    <hr class="division" />
     <PostInfo :post="post"></PostInfo>
   </Card>
 </template>
@@ -46,6 +46,9 @@ export default {
   // border-bottom 1.5px solid #707477
   border-bottom 1.5px solid $accentColor
   padding-bottom 2px
+}
+.division {
+  margin 10px 0
 }
 .title {
   font-size 1.25rem

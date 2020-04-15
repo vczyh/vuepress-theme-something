@@ -43,6 +43,6 @@ export default {
 
 <style lang="stylus" scoped>
 .card {
-  margin-bottom 20px
+  margin-bottom 25px
 }
 </style>

@@ -7,7 +7,8 @@
         </div>
         <!-- color="#404040" -->
       </DefaultTransition>
-      <PostsPagination :posts="currentTagPosts" :key="currentTag" />
+      <!-- <PostsPagination :posts="currentTagPosts" :key="currentTag" /> -->
+      <PostsPagination :posts="currentTagPosts" />
     </div>
   </main>
 </template>
@@ -44,8 +45,7 @@ export default {
     }
   },
 
-  mounted() {
-  },
+  mounted() {}
 };
 </script>
 

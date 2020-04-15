@@ -73,7 +73,7 @@ export default {
 <style lang="stylus" scoped>
 // @require '../styles/iconfont.css'
 .wrapper {
-  padding 20px 10px
+  padding 40px 10px 30px
   .contact {
     text-align center
   }
@@ -86,14 +86,14 @@ export default {
     justify-content center
     .posts-info-item {
       padding 20px 30px
-      font-size 1.1rem
-      font-weight 500
+      font-size 0.9rem
+      // font-weight 500
       text-align center
-      // font-weight 600
+      font-weight 600
       .number {
         font-size 1.2rem
         margin-top 10px
-        font-weight 500
+        // font-weight 600
       }
     }
   }

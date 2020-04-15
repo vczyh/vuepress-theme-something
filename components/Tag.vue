@@ -32,7 +32,7 @@ export default {
 <style lang="stylus" scoped>
 $tag-vertical-padding = 0px
 $tag-horizontal-padding = 8px
-$height = 1.45rem
+$height = 1.5rem
 // $height = $height - 0.1rem
 .tag {
   display inline-block
@@ -40,16 +40,16 @@ $height = 1.45rem
   color #fff
   border-radius 0.25rem
   white-space nowrap
-  font-size 0.77rem
+  font-size 0.79rem
   height $height
   line-height $height
   // box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
 }
 .active {
   // font-size 0.9rem
-  height 1.8rem
-  line-height 1.8rem
-  box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.6)
+  // height 1.8rem
+  // line-height 1.8rem
+  box-shadow 0 1px 15px 0 rgba(0, 0, 0, 0.6)
 }
 .dark {
 }

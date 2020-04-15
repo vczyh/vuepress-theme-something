@@ -70,7 +70,7 @@ export default {
   },
   watch: {
     currentPage() {
-      this.key++;
+      // this.key++;
       // sessionStorage.setItem("currentPage", this.currentPage);
       this.$store.setCurrentPageAction(this.currentPage);
     }

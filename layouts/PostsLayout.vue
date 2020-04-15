@@ -67,7 +67,7 @@ export default {
     display flex
     width 300px
     flex-direction column
-    margin-right 30px
+    margin-right 60px
     .tags-info {
       margin-top 30px
       padding 10px
