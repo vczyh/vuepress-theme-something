@@ -66,7 +66,7 @@ layout: ArchiveLayout
 
 ```
 ---
-layout: ArchiveLayout
+layout: WaterfallLayout
 pictures:
   - src: http://p.vczyh.com/blog/IMG_1096(20200128-152110).JPG
     info: 科比绝杀
