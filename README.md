@@ -8,7 +8,7 @@ npm install -g @vuepress-something/cli
 ```
 
 ```bash
-vps init blog
+vps init
 ```
 
 如果你想在现有的项目里使用，可以这么做：
