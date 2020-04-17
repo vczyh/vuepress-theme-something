@@ -1,13 +1,22 @@
 
 [![Join the chat at https://gitter.im/vuepress-theme-something/community](https://badges.gitter.im/vuepress-theme-something/community.svg)](https://gitter.im/vuepress-theme-something/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## 快速开始
+## Quick Start
 
 ```bash
-npm install vuepress-theme-something --save-dev
+npm install -g @vuepress-something/cli
 ```
 
-通过 `config.js` 使用主题
+```bash
+vps init blog
+```
+
+如果你想在现有的项目里使用，可以这么做：
+```bash
+npm install vuepress vuepress-theme-something --save-dev
+```
+
+通过 `config.js` 使用主题：
 ```js
 module.exports = {
   theme: 'vuepress-theme-something'
@@ -27,7 +36,7 @@ module.exports = {
 
 ### PostsLayout
 
-使用 `PostsLayout` 的页面会显示为博客列表页，先根据官方文档配置导航栏，例如 `/blog/`，然后创建 `docs/blog/index.md` ，那么列表的内容就是 `blog` 文件夹下的所有文章
+使用 `PostsLayout` 的页面会显示为博客列表页，先根据官方文档配置导航栏，例如 `/blog/`，然后创建 `docs/blog/README.md` ，那么列表的内容就是 `blog` 文件夹下的所有文章
 
 ```
 ---
@@ -74,5 +83,5 @@ pictures:
 
 ## 其他
 
-vuepress-theme-something 刚刚起步，需要不断完善，之后会不断优化，如有不足，请大家多多指教~
+vuepress-theme-something 刚刚起步，之后会不断改进，请大家多多指教~
 
