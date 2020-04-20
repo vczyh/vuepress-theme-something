@@ -5,7 +5,9 @@ import {
   getCurrentPathTags,
   getArchive,
   sortPostsByDate,
-  getNavPaths
+  getNavPaths,
+  getNavPathItems,
+  getPageByLayout
 } from "@theme/util/post"
 import store from "@theme/store";
 
@@ -29,6 +31,12 @@ export default ({
   Vue.prototype.$posts = posts
   Vue.prototype.$tags = getTags(posts)
   Vue.prototype.$archive = getArchive(posts)
+  const page = getPageByLayout(siteData.pages, 'FriendlyLinkLayout')
+  const links = []
+  for (const category of Object.keys(page.frontmatter.links)) {
+    links.push(...page.frontmatter.links[category])
+  }
+  Vue.prototype.$links = links
 
   // 全局混入
   Vue.mixin(mixin)
@@ -40,7 +48,8 @@ export default ({
 
     // 根路径重定向
     if (to.path == '/') {
-      const navs = siteData.themeConfig.nav
+      const navs = getNavPathItems(siteData.themeConfig.nav)
+      console.log(navs)
       for (const nav of navs) {
         if (nav.home) {
           return next(nav.link)
@@ -59,7 +68,7 @@ export default ({
       store.setCurrentTagAction(from.query.tag)
     }
     // todo 删除tag
-    
+
     // 文章页面跳转到标签页面
     if (!isNav(from.path) && to.path == '/tags/') {
       // 点击导航tag
@@ -75,13 +84,6 @@ export default ({
       return navPaths.indexOf(path) != -1
     }
 
-    // let { dir } = siteData.themeConfig
-    // if (!dir.startsWith('/')) dir = '/' + dir
-    // if (dir.endsWith('/')) dir = dir.slice(0, dir.length - 1)
-    // if (!to.path.startsWith(dir)) {
-    //   return next(dir + to.path)
-    // }
-  
     next()
   })
 }

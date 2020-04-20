@@ -29,6 +29,6 @@ export default {
 
 <style lang="stylus" scoped>
 .theme-custom-content {
-  margin-top 3.6rem
+  margin-top 5rem
 }
 </style>

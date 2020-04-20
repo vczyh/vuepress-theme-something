@@ -22,6 +22,14 @@ export function getTags(posts) {
   return tags
 }
 
+export function getPageByLayout(pages, layout) {
+  for(const page of pages) {
+    if(page.frontmatter.layout === layout)
+      return page;
+  }
+}
+
+
 export function getCurrentTagPosts(posts, tag) {
   if (!tag) return posts
   return posts.filter(post => {
@@ -42,6 +50,16 @@ export function getNavPaths(navs) {
   for (const nav of navs) {
     if (nav.link) paths.push(nav.link)
     else paths.push(...getNavPaths(nav.items))
+  }
+  return paths
+}
+
+export function getNavPathItems(navs) {
+  if (navs.length == 0) return []
+  const paths = []
+  for (const nav of navs) {
+    if (nav.link) paths.push(nav)
+    else paths.push(...getNavPathItems(nav.items))
   }
   return paths
 }

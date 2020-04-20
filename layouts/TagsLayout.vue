@@ -3,12 +3,11 @@
     <div class="theme-default-content">
       <DefaultTransition delay="0.02">
         <div v-show="showTransition" class="tags-container">
-          <Tags :tags="$tags" :allTag="true" :currentTag="currentTag" @tag-click="tagClick" />
+          <Tags :tags="$tags" :allTag="true" :currentTag="currentTag" size="large" @tag-click="tagClick" />
         </div>
-        <!-- color="#404040" -->
       </DefaultTransition>
-      <!-- <PostsPagination :posts="currentTagPosts" :key="currentTag" /> -->
-      <PostsPagination :posts="currentTagPosts" />
+      <PostsPagination :posts="currentTagPosts" :key="currentTag" />
+      <!-- <PostsPagination :posts="currentTagPosts" /> -->
     </div>
   </main>
 </template>

@@ -3,8 +3,8 @@
     <Tag
       v-if="allTag"
       :style="{margin: marginStyle}"
-      :color="getColor()"
       :active="'all' == currentTag"
+      :size="size"
       @click.native="tagClick('all')"
       class="tag"
     >全部</Tag>
@@ -12,8 +12,8 @@
       v-for="tag in tags"
       :key="tag"
       :style="{margin: marginStyle}"
-      :color="getColor()"
       :active="tag == currentTag"
+      :size="size"
       @click.native="tagClick(tag)"
       class="tag"
     >{{ tag }}</Tag>
@@ -41,28 +41,34 @@ export default {
     currentTag: {
       type: String,
       default: ""
+    },
+    size: {
+      type: String,
+      default: "medium"
     }
   },
   data() {
     return {
-      colors: ["#409eff", "#67c23a", "#909399", "#f56c6c", "#e6a23c"]
+      // colors: ["#409eff", "#67c23a", "#909399", "#f56c6c", "#e6a23c"]
+      // colors: ["#ff4d40", "#ff7f50", "#1bbe36", "#0ec4ba", "#ff8f00"]
     };
   },
 
   methods: {
-    randomColor() {
-      return this.colors[randomInt(0, this.colors.length - 1)];
-    },
+    // randomColor() {
+    //   return this.colors[randomInt(0, this.colors.length - 1)];
+    // },
 
-    getColor() {
-      return this.$themeConfig.tagsColor ? this.$themeConfig.tagsColor : this.randomColor();
-    },
+    // getColor() {
+    //   return this.$themeConfig.tagsColor
+    //     ? this.$themeConfig.tagsColor
+    //     : this.randomColor();
+    // },
 
     tagClick(tag) {
       if (tag !== this.currentTag) {
         this.$emit("tag-click", tag);
       }
-      
     }
   }
 };

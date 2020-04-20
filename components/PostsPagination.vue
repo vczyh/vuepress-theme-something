@@ -86,7 +86,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .pagination {
-  margin-top 4rem
-  margin-bottom 3rem
+  margin-top 3rem
+  margin-bottom 2rem
 }
 </style>

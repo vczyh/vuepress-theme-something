@@ -39,6 +39,7 @@ import Layout from "@theme/layouts/Layout.vue";
 import IndexLayout from "@theme/layouts/IndexLayout.vue";
 import ArchiveLayout from "@theme/layouts/ArchiveLayout.vue";
 import WaterfallLayout from "@theme/layouts/WaterfallLayout.vue";
+import FriendlyLinkLayout from "@theme/layouts/FriendlyLinkLayout.vue";
 
 export default {
   name: "GlobalLayout",
@@ -54,7 +55,8 @@ export default {
     PostsLayout,
     IndexLayout,
     ArchiveLayout,
-    WaterfallLayout
+    WaterfallLayout,
+    FriendlyLinkLayout
   },
 
   data() {

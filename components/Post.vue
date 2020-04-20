@@ -51,7 +51,7 @@ export default {
   margin 10px 0
 }
 .title {
-  font-size 1.25rem
+  font-size 1.2rem
   .link {
     // color #2c3e50
     color $accentColor

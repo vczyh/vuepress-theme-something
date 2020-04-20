@@ -1,30 +1,47 @@
 <template>
-  <DefaultTransition delay="0.02">
-    <Card class="wrapper">
-      <div class="contact">
-        <i v-if="has('github')" class="iconfont link" @click="github">&#xe690;</i>
-        <i v-if="has('mail')" class="iconfont link" @click="mail">&#xe61c;</i>
-        <i v-if="has('qq')" class="iconfont link" @click="qq">&#xe603;</i>
+  <div>
+    <!-- <Card class="item">
+      <div class="content">
+        <img src="/avatar.jpg" />
+        <h3>vczyh</h3>
       </div>
-      <!-- <hr /> -->
-      <div class="posts-info">
-        <div class="posts-info-item">
-          <div>文章</div>
-          <div class="number">{{$currentPathPosts.length}}</div>
+    </Card>-->
+
+    <Card class="item">
+      <div class="title">{{$frontmatter.desc}}</div>
+      <div class="info-items">
+        <div class="info-item">
+          <div class="item-title">文章</div>
+          <div class="item-num">{{$currentPathPosts.length}}</div>
         </div>
-        <div class="posts-info-item">
-          <div>标签</div>
-          <div class="number">{{$currentPathTags.length}}</div>
+        <div class="info-item">
+          <div class="item-title">标签</div>
+          <div class="item-num">{{$currentPathTags.length}}</div>
         </div>
       </div>
-      <hr />
-      <Tags :tags="$currentPathTags" @tag-click="tagClick" marginStyle="4px 3.5px" class="tags" />
     </Card>
-  </DefaultTransition>
+
+    <Card class="item">
+      <div class="title">标签</div>
+      <Tags :tags="$currentPathTags" @tag-click="tagClick" marginStyle="4px 3.5px" />
+    </Card>
+
+    <Card class="item">
+      <div class="title">友链</div>
+      <div class="links">
+        <Tag
+          v-for="link in $links"
+          @click.native="goLink(link)"
+          class="link"
+        >{{link.title}}</Tag>
+      </div>
+    </Card>
+  </div>
 </template>
 
 <script>
 import Card from "@theme/components/Card.vue";
+import Tag from "@theme/components/Tag.vue";
 import Tags from "@theme/components/Tags.vue";
 import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
@@ -34,7 +51,8 @@ export default {
   components: {
     Card,
     Tags,
-    DefaultTransition
+    DefaultTransition,
+    Tag
   },
   data() {
     return {
@@ -65,6 +83,9 @@ export default {
     tagClick(current) {
       this.$store.setCurrentPageAction(1);
       this.$router.push(`/tags/?tag=${current}`);
+    },
+    goLink(link) {
+      window.open(link.url);
     }
   }
 };
@@ -72,33 +93,49 @@ export default {
 
 <style lang="stylus" scoped>
 // @require '../styles/iconfont.css'
-.wrapper {
-  padding 40px 10px 30px
-  .contact {
-    text-align center
+.item {
+  padding 10px 20px
+  margin-bottom 20px
+  .title {
+    font-weight 600
+    line-height 2.7rem
+    border-bottom 1px solid #d8e2eb
+    margin-bottom 0.6rem
   }
-  .link {
-    font-size 30px
-    cursor pointer
-  }
-  .posts-info {
+  .info-items {
     display flex
-    justify-content center
-    .posts-info-item {
-      padding 20px 30px
-      font-size 0.9rem
-      // font-weight 500
-      text-align center
-      font-weight 600
-      .number {
-        font-size 1.2rem
+    justify-content space-around
+    font-size 1.2rem
+    .info-item {
+      display flex
+      flex-direction column
+      align-items center
+      .item-title {
+        font-size 1rem
+        font-weight 600
+      }
+      .item-num {
         margin-top 10px
-        // font-weight 600
       }
     }
   }
-  .tags {
-    margin-top 20px
+  .content {
+    margin-top 30px
+    text-align center
+    img {
+      width 120px
+      border-radius 50%
+    }
+    .name {
+      font-size 1.2rem
+      font-weight 600
+    }
+  }
+  .links {
+    .link {
+      margin 4px 3.5px
+      cursor pointer
+    }
   }
 }
 </style>

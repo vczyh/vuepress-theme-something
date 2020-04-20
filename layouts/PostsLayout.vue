@@ -1,11 +1,13 @@
 <template>
   <main class="page">
     <div :class="themeClass">
-      <div v-if="!isMobile" class="info">
-        <Avatar v-show="showTransition" :key="key"></Avatar>
-      </div>
       <div class="posts">
         <PostsPagination :posts="$currentPathPosts" :key="key" class="post-pagination" />
+      </div>
+      <div v-if="!isMobile" class="info">
+        <DefaultTransition delay="0.02">
+          <Avatar v-show="showTransition" :key="key"></Avatar>
+        </DefaultTransition>
       </div>
     </div>
   </main>
@@ -64,14 +66,8 @@ export default {
   width 100%
   margin-top 7rem
   .info {
-    display flex
     width 300px
-    flex-direction column
-    margin-right 60px
-    .tags-info {
-      margin-top 30px
-      padding 10px
-    }
+    margin-left 40px
   }
   .post-pagination {
     width 700px
