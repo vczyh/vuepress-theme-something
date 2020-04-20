@@ -84,6 +84,7 @@ $height = 3.5rem
       .desc {
         font-size 0.8rem
         color #acb3c2
+        color #808080
         // color $accentColor
       }
     }
