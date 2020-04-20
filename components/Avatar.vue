@@ -8,7 +8,7 @@
     </Card>-->
 
     <Card class="item">
-      <div class="title">{{$frontmatter.desc}}</div>
+      <div class="title">{{$frontmatter.desc || '这个人很赖 ~'}}</div>
       <div class="info-items">
         <div class="info-item">
           <div class="item-title">文章</div>
