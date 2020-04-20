@@ -11,7 +11,7 @@ import FriendLink from "@theme/components/FriendLink.vue";
 import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
 export default {
-  name: "FriendlyLinkLayout",
+  name: "LinksLayout",
   mixins: [transitonMixin],
   components: {
     FriendLink,

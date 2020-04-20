@@ -31,10 +31,12 @@ export default ({
   Vue.prototype.$posts = posts
   Vue.prototype.$tags = getTags(posts)
   Vue.prototype.$archive = getArchive(posts)
-  const page = getPageByLayout(siteData.pages, 'FriendlyLinkLayout')
+  const page = getPageByLayout(siteData.pages, 'LinksLayout')
   const links = []
-  for (const category of Object.keys(page.frontmatter.links)) {
-    links.push(...page.frontmatter.links[category])
+  if (page) {
+    for (const category of Object.keys(page.frontmatter.links)) {
+      links.push(...page.frontmatter.links[category])
+    }
   }
   Vue.prototype.$links = links
 
@@ -49,7 +51,6 @@ export default ({
     // 根路径重定向
     if (to.path == '/') {
       const navs = getNavPathItems(siteData.themeConfig.nav)
-      console.log(navs)
       for (const nav of navs) {
         if (nav.home) {
           return next(nav.link)

@@ -24,7 +24,7 @@ export function getTags(posts) {
 
 export function getPageByLayout(pages, layout) {
   for(const page of pages) {
-    if(page.frontmatter.layout === layout)
+    if(page.frontmatter && page.frontmatter.layout === layout)
       return page;
   }
 }
