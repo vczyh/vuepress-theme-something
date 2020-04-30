@@ -10,7 +10,7 @@
       </DefaultTransition>-->
     </div>
 
-    <DefaultTransition delay="0.1">
+    <DefaultTransition delay="0.02">
       <Content v-show="showTransition" class="theme-default-content content" />
     </DefaultTransition>
 
@@ -18,10 +18,13 @@
     <PageNav v-bind="{ sidebarItems }" />
 
     <slot name="bottom" />
-    <div class="theme-default-content">
-      <Valine />
-      <Gitalk />
-    </div>
+
+    <DefaultTransition delay="0.04">
+      <div v-show="showTransition" class="theme-default-content">
+        <Valine />
+        <Gitalk />
+      </div>
+    </DefaultTransition>
   </main>
 </template>
 
