@@ -38,7 +38,6 @@ import PostsLayout from "@theme/layouts/PostsLayout.vue";
 import Layout from "@theme/layouts/Layout.vue";
 import IndexLayout from "@theme/layouts/IndexLayout.vue";
 import ArchiveLayout from "@theme/layouts/ArchiveLayout.vue";
-import WaterfallLayout from "@theme/layouts/WaterfallLayout.vue";
 import LinksLayout from "@theme/layouts/LinksLayout.vue";
 
 export default {
@@ -50,12 +49,12 @@ export default {
     Sidebar,
     Navbar,
     BackToTop,
+    
     Layout,
     TagsLayout,
     PostsLayout,
     IndexLayout,
     ArchiveLayout,
-    WaterfallLayout,
     LinksLayout
   },
 

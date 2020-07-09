@@ -26,7 +26,6 @@
     "@vuepress/plugin-medium-zoom": "^1.4.1",
     "blueimp-md5": "^2.13.0",
     "gitalk": "^1.6.2",
-    "valine": "^1.4.14",
-    "vue-waterfall-easy": "^2.4.4"
+    "valine": "^1.4.14"
   }
 }
