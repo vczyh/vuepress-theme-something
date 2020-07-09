@@ -7,10 +7,11 @@
     <i class="iconfont iconxingmingyonghumingnicheng">
       <span>{{post.frontmatter.author || $themeConfig.author}}</span>
     </i>
-
+    <!-- Valine管理评论数 -->
     <i
       v-if="$site.themeConfig.valine && $site.themeConfig.valine.visitor && showCount"
       :id="$route.path"
+      :data-flag-title="post.title"
       class="iconfont iconyuedushu leancloud_visitors"
     >
       <span class="leancloud-visitors-count"></span>
