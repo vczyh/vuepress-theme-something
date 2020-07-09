@@ -1,0 +1,4 @@
+---
+layout: ArchiveLayout
+sidebar: false
+---
