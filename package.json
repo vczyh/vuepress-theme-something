@@ -9,8 +9,8 @@
     "vue",
     "blog"
   ],
-  "author": "zhangyuheng",
-  "license": "ISC",
+  "author": "vczyh",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/vczyh/vuepress-theme-something.git"
