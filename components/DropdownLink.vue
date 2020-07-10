@@ -30,6 +30,7 @@
             >
               <NavLink
                 :item="childSubItem"
+                :isSubItem="true"
                 @focusout="
                   isLastItemOfArray(childSubItem, subItem.items) &&
                     isLastItemOfArray(subItem, item.items) &&
@@ -42,6 +43,7 @@
           <NavLink
             v-else
             :item="subItem"
+            :isSubItem="true"
             @focusout="isLastItemOfArray(subItem, item.items) && setOpen(false)"
           />
         </li>
@@ -147,8 +149,8 @@ export default {
         line-height 1.7rem
         position relative
         border-bottom none
-        // font-weight 400
-        font-weight 600 // custom
+        font-weight 400
+        // font-weight 600 // custom
         margin-bottom 0
         padding 0 1.5rem 0 1.25rem
         &:hover {

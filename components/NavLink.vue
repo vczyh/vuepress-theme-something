@@ -7,7 +7,7 @@
     @focusout.native="focusoutAction"
   >
     <i class="iconfont" :class="item.icon">
-      <span>{{ item.text }}</span>
+      <span :class="subItemClass">{{ item.text }}</span>
     </i>
   </RouterLink>
   <a
@@ -20,7 +20,7 @@
   >
     <!-- {{ item.text }} -->
     <i class="iconfont" :class="item.icon">
-      <span>{{ item.text }}</span>
+      <span :class="subItemClass">{{ item.text }}</span>
     </i>
     <OutboundLink v-if="isBlankTarget" />
   </a>
@@ -35,6 +35,10 @@ export default {
   props: {
     item: {
       required: true
+    },
+    isSubItem: {
+      tyep: Boolean,
+      default: false
     }
   },
 
@@ -82,6 +86,13 @@ export default {
         return this.item.rel;
       }
       return this.isBlankTarget ? "noopener noreferrer" : "";
+    },
+    // add
+    subItemClass() {
+      console.log(this.isSubItem)
+      return {
+        subitem: this.isSubItem
+      };
     }
   },
 
@@ -97,9 +108,12 @@ export default {
 .nav-link {
   .iconfont {
     font-size 0.9rem
-    font-weight 600 // custom
     span {
+      font-weight 600 // custom
       margin-left 5px
+      &.subitem {
+        font-weight 500
+      }
     }
   }
 }
