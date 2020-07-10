@@ -23,7 +23,7 @@ const question = [
     },
     validate(val) {
       const validate = (val.trim().split(" ")).length === 1
-      return validate || 'Blog name is not allowed to have spaces ';
+      return validate || 'Blog name is not allowed to have spaces';
     },
     transformer(val) {
       return val;
