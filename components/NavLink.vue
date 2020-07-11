@@ -89,7 +89,6 @@ export default {
     },
     // add
     subItemClass() {
-      console.log(this.isSubItem)
       return {
         subitem: this.isSubItem
       };
