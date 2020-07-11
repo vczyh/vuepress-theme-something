@@ -25,17 +25,6 @@
       <div class="title">标签</div>
       <Tags :tags="$currentPathTags" @tag-click="tagClick" marginStyle="4px 3.5px" />
     </Card>
-
-    <Card class="item">
-      <div class="title">友链</div>
-      <div class="links">
-        <Tag
-          v-for="link in $links"
-          @click.native="goLink(link)"
-          class="link"
-        >{{link.title}}</Tag>
-      </div>
-    </Card>
   </div>
 </template>
 
@@ -83,9 +72,6 @@ export default {
     tagClick(current) {
       this.$store.setCurrentPageAction(1);
       this.$router.push(`/tags/?tag=${current}`);
-    },
-    goLink(link) {
-      window.open(link.url);
     }
   }
 };
@@ -129,12 +115,6 @@ export default {
     .name {
       font-size 1.2rem
       font-weight 600
-    }
-  }
-  .links {
-    .link {
-      margin 4px 3.5px
-      cursor pointer
     }
   }
 }
