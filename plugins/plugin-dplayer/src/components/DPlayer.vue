@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import DPlayer from "dplayer";
 export default {
   name: "DPlayer",
   props: {
@@ -11,9 +10,11 @@ export default {
   },
   methods: {
     load() {
-      const dp = new DPlayer({
-        container: document.getElementById("dplayer"),
-        ...this.options,
+      import("dplayer").then(({ default: DPlayer }) => {
+        const dp = new DPlayer({
+          container: document.getElementById("dplayer"),
+          ...this.options,
+        });
       });
     },
   },
