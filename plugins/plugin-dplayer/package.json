@@ -1,0 +1,28 @@
+{
+  "name": "@vuepress-something/vuepress-plugin-dplayer",
+  "description": "dplayer for vuepress",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "vczyh",
+  "license": "MIT",
+  "keywords": [
+    "vuepress",
+    "vuepress theme",
+    "vue",
+    "blog",
+    "dplayer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vczyh/vuepress-theme-something.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "pub": "npm version patch && npm publish"
+  },
+  "peerDependencies": {
+    "dplayer": "^1.26.0"
+  }
+}
