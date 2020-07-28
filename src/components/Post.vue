@@ -11,7 +11,7 @@
     </div>
     <div class="excerpt" v-html="post.excerpt"></div>
     <hr class="division" />
-    <PostInfo :post="post"></PostInfo>
+    <PostInfo :post="post" :showTag="true"></PostInfo>
   </Card>
 </template>
 

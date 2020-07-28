@@ -24,8 +24,8 @@ export default {
   overflow hidden
   box-sizing border-box
   transition all 0.3s
-  border-radius 0.25rem
-  box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
+  border-radius 8px
+  box-shadow 0 2px 8px 0 rgba(0, 0, 0, 0.15)
   &:hover
-    box-shadow 0 2px 16px 0 rgba(0, 0, 0, 0.2)
+    box-shadow 0 5px 20px 0 rgba(0, 0, 0, 0.15)
 </style>

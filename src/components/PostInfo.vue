@@ -1,23 +1,25 @@
 <template>
   <div class="post-info">
-    <i class="iconfont iconshijian">
+    <i class="iconfont iconshijian1">
       <span>{{date(post.frontmatter.date)}}</span>
     </i>
 
-    <i class="iconfont iconxingmingyonghumingnicheng">
+    <i class="iconfont iconuser">
       <span>{{post.frontmatter.author || $themeConfig.author}}</span>
     </i>
-    <!-- Valine管理评论数 -->
+
+    <!-- 阅读数 -->
     <i
       v-if="$site.themeConfig.valine && $site.themeConfig.valine.visitor && showCount"
       :id="$route.path"
       :data-flag-title="post.title"
-      class="iconfont iconyuedushu leancloud_visitors"
+      class="iconfont iconyuedu leancloud_visitors"
     >
       <span class="leancloud-visitors-count"></span>
     </i>
 
-    <i class="iconfont iconbiaoqian1" v-if="showTag && post.frontmatter.tags">
+    <!-- 标签 -->
+    <i class="iconfont iconbiaoqian2" v-if="showTag && post.frontmatter.tags">
       <span v-for="tag in post.frontmatter.tags" @click="tagClick(tag)" class="tag">{{tag}}</span>
     </i>
   </div>
@@ -60,15 +62,16 @@ export default {
 .post-info {
   .iconfont {
     display inline-block
-    line-height 1.5rem
-    height 1.5rem
-    font-size 0.9rem
+    line-height 1.3rem
+    height 1.3rem
+    font-size 14px
+    color #666
     &:not(:last-child) {
       margin-right 2rem
     }
     span {
       margin-left 5px
-      color #4e6e8e
+      color #666
       &.tag {
         &:not(:last-child) {
           margin-right 0.8rem
