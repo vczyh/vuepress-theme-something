@@ -7,6 +7,7 @@
         :currentPage="currentPage"
         :pageSize="pageSize"
         :key="key"
+        class="posts"
       />
     </DefaultTransition>
 
@@ -37,26 +38,26 @@ export default {
   props: {
     posts: {
       type: Array,
-      required: true
+      required: true,
     },
     pageSize: {
       type: Number,
-      default: 6
+      default: 6,
     },
     pagerCount: {
       type: Number,
-      default: 5
+      default: 5,
     },
     initCurrentPage: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
   data() {
     return {
       // currentPage: this.initCurrentPage,
       currentPage: this.$store.state.currentPage,
-      key: 0
+      key: 0,
     };
   },
   methods: {
@@ -66,14 +67,14 @@ export default {
       //   behavior: "instant"
       // });
       this.currentPage = current;
-    }
+    },
   },
   watch: {
     currentPage() {
       // this.key++;
       // sessionStorage.setItem("currentPage", this.currentPage);
       this.$store.setCurrentPageAction(this.currentPage);
-    }
+    },
   },
   mounted() {
     // sessionStorage.setItem("path", this.$route.path);
@@ -81,12 +82,15 @@ export default {
     // if (currentPage) {
     //   this.currentPage = Number(currentPage);
     // }
-  }
+  },
 };
 </script>
 <style lang="stylus" scoped>
-.pagination {
-  margin-top 3rem
-  margin-bottom 2rem
+.posts-pagination {
+  width 100%
+  .pagination {
+    margin-top 3rem
+    margin-bottom 2rem
+  }
 }
 </style>

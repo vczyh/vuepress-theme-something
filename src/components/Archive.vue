@@ -41,7 +41,7 @@ export default {
 <style lang="stylus" scoped>
 /* @require '../styles/iconfont.css' */
 .timeline-wrapper {
-  padding 10px 120px
+  // padding 10px 120px
 }
 ul {
   list-style none
@@ -69,7 +69,8 @@ ul {
       width 4px
       height 100%
       // background #faf0e6
-      background #808080
+      // background #808080
+      background #eaecef
     }
     .content {
       white-space nowrap
@@ -96,7 +97,8 @@ ul {
       }
       .title {
         margin-left 10px
-        color #707477
+        // color #707477
+        color #666
         &:hover {
           color $accentColor
         }

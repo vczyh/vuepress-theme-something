@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       col: "#404040",
-      colors: ["#fff"]
+      colors: ["#d54a94", "#ff3828","#6640ff", "#0033ff", "#2e8b57", "#0dbf8c"]
       // colors: [ "#cc8167", "#ba8f6c"]
       // colors: ["#808080"]
       // colors: ["#ff7f50", "#0ec4ba", "#ff8f00"]
@@ -60,9 +60,10 @@ $height = 1.2rem
   display inline-block
   padding $tag-vertical-padding $tag-horizontal-padding
   // color #fff
-  color #808080
-  border-radius 0.25rem
-  border 1px solid #808080
+  // color #808080
+  color #fff
+  border-radius 8px
+  // border 1px solid #808080
   white-space nowrap
   // font-size 0.79rem
   // height $height
@@ -70,7 +71,9 @@ $height = 1.2rem
   // box-shadow 0 1px 6px 0 rgba(0, 0, 0, 0.2)
 }
 .medium {
-  font-size 0.79rem
+  font-size 0.8rem
+  // font-size 12px
+  font-weight 500
   height $height
   line-height $height
 }

@@ -4,7 +4,8 @@
 @require './arrow'
 @require './wrapper'
 @require './toc'
-@import '//at.alicdn.com/t/font_1695296_x44984nizcm.css'
+@require './theme'
+@import '//at.alicdn.com/t/font_1695296_okgi7o6geoj.css'
 
 html, body
   padding 0
@@ -223,28 +224,33 @@ th, td
 
 @require 'mobile.styl'
 
+// navbar custom
+.dropdown-wrapper .dropdown-title 
+  .iconfont 
+    color #666
+.nav-link 
+  .iconfont 
+    color #666
+
 
 // Valine custom
 .v 
   .vwrap 
-    // border: 1px dashed #a9a9a9 !important
     .vheader 
       .vinput 
-        // width: 33.33%;
-        // border-bottom: 1px dashed #a9a9a9 !important
         border-bottom: none !important
         font-size: .9rem !important
   .vbtn
-    // background: #d0d0d0 !important
   .vsys
-    // color: #646464 !important
+    background-color #e4e4e4
   .vcards 
     .vcard 
-      .vh 
-        .vtime
-          // color: #646464 !important
       .vcontent
-        // background-color: #e3e3e3
+        margin-top .75em
+        padding .01rem 1rem!important
+        background-color #1b1f230d
+  .vpower
+    display: none
         
 
 

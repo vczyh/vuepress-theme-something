@@ -19,7 +19,7 @@
     </i>
 
     <!-- 标签 -->
-    <i class="iconfont iconbiaoqian2" v-if="showTag && post.frontmatter.tags">
+    <i class="iconfont iconbiaoqian2 tags" v-if="showTag && post.frontmatter.tags">
       <span v-for="tag in post.frontmatter.tags" @click="tagClick(tag)" class="tag">{{tag}}</span>
     </i>
   </div>
@@ -34,16 +34,16 @@ export default {
   props: {
     post: {
       type: Object,
-      required: true
+      required: true,
     },
     showTag: {
       type: Boolean,
-      default: false
+      default: false,
     },
     showCount: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   methods: {
     date(date) {
@@ -52,8 +52,8 @@ export default {
     tagClick(tag) {
       this.$router.push(`/tags/?tag=${tag}`);
       this.$store.setCurrentPageAction(1);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -78,6 +78,13 @@ export default {
         }
         cursor pointer
       }
+    }
+  }
+}
+@media (max-width $MQNarrow) {
+  .post-info {
+    .tags {
+      display none
     }
   }
 }

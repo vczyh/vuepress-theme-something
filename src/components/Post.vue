@@ -40,7 +40,7 @@ export default {
 
 <style lang="stylus" scoped>
 .post {
-  padding 18px 20px
+  padding 16px 20px
 }
 .underline {
   // border-bottom 1.5px solid #707477

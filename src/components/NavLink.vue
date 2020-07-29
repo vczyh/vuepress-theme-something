@@ -103,12 +103,12 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .nav-link {
   .iconfont {
     font-size 0.9rem
     span {
-      font-weight 600 // custom
+      // font-weight 600 // custom
       margin-left 5px
       &.subitem {
         font-weight 500

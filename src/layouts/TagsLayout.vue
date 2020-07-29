@@ -1,15 +1,18 @@
 <template>
-  <main class="page">
-    <div class="theme-default-content">
-      <DefaultTransition delay="0.02">
-        <div v-show="showTransition" class="tags-container">
-          <Tags :tags="$tags" :allTag="true" :currentTag="currentTag" size="large" @tag-click="tagClick" />
-        </div>
-      </DefaultTransition>
-      <PostsPagination :posts="currentTagPosts" :key="currentTag" />
-      <!-- <PostsPagination :posts="currentTagPosts" /> -->
-    </div>
-  </main>
+  <div class="layout-wrapper tags-layout-wrapper">
+    <!-- <DefaultTransition delay="0.02"> -->
+      <Tags
+        :tags="$tags"
+        :allTag="true"
+        :currentTag="currentTag"
+        size="large"
+        @tag-click="tagClick"
+        v-show="showTransition"
+        class="tags-container"
+      />
+    <!-- </DefaultTransition> -->
+    <PostsPagination :posts="currentTagPosts" :key="currentTag" class="posts-pagination" />
+  </div>
 </template>
 
 <script>
@@ -34,27 +37,39 @@ export default {
     },
     currentTag() {
       return this.$route.query.tag;
-    }
+    },
   },
 
   methods: {
     tagClick(tag) {
       this.goTags(tag);
       this.$store.setCurrentPageAction(1);
-    }
+    },
   },
 
-  mounted() {}
+  mounted() {},
 };
 </script>
 
 <style lang="stylus" scoped>
-// @require '../styles/wrapper.styl'
-.page {
-  padding-bottom 2rem
-  display block
+.tags-layout-wrapper {
+  display flex
+  flex-wrap wrap
+  justify-content center
+  .tags-container {
+    width 400px
+    margin-right 40px
+  }
+  .posts-pagination {
+    max-width 740px
+  }
 }
-.tags-container {
-  margin-bottom 2rem
+@media (max-width $MQNarrow) {
+  .tags-layout-wrapper {
+    .tags-container {
+      width 740px
+      margin-right 0
+    }
+  }
 }
 </style>
