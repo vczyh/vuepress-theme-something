@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-something",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "a simple and gorgeous vuepress theme",
   "main": "src/index.js",
   "keywords": [
