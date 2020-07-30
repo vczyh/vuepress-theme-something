@@ -3,14 +3,10 @@
 </template>
 
 <script>
-// import AV from "@theme/util/leancloud";
-// import AV from "leancloud-storage";
-// const Valine = require("valine");
-
 export default {
   name: "Valine",
   methods: {
-    init() {
+    load() {
       const Valine = require("valine");
       let valine = this.$site.themeConfig.valine;
       if (!valine) return;
@@ -23,11 +19,11 @@ export default {
     if (!window.AV) {
       window.AV = require("leancloud-storage");
     }
-    this.init();
+    this.load();
   },
   watch: {
     "$route.path": function(to, from) {
-      this.init();
+      this.load();
     }
   }
 };

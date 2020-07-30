@@ -1051,6 +1051,20 @@
   optionalDependencies:
     prettier "^1.18.2"
 
+"@vuepress-something/vuepress-plugin-dplayer@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@vuepress-something/vuepress-plugin-dplayer/-/vuepress-plugin-dplayer-1.0.1.tgz#fead6ab2294d49420b921f1cfee2f1a41d7507d9"
+  integrity sha512-06gKFlWt/RfzpGgPk3od8gzq3v0obolyPG1KzY/5ZZOERvh5QdSfx9mgMmdPTCtpO5BLAJ+yxyz1M9lYboxLrg==
+  dependencies:
+    dplayer "^1.26.0"
+
+"@vuepress-something/vuepress-plugin-valine@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@vuepress-something/vuepress-plugin-valine/-/vuepress-plugin-valine-1.0.0.tgz#9288a279a4adb26274fcaeb4bebd89ecd5b999e2"
+  integrity sha512-WOuPM8v/lFLhnok6Bos7DW3N9Zo5SiheXYknhIjRfDmRJz2iWVgd4KKRvIaABW7AyuZGZVNcjAIWFLeKOjnhgw==
+  dependencies:
+    valine "^1.4.14"
+
 "@vuepress/core@1.5.2":
   version "1.5.2"
   resolved "https://registry.npmjs.org/@vuepress/core/-/core-1.5.2.tgz#bac96e8c64dd5b769dc22715abfe8b357b50fe49"

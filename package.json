@@ -24,8 +24,9 @@
   },
   "dependencies": {
     "@vuepress/plugin-medium-zoom": "^1.4.1",
+    "@vuepress-something/vuepress-plugin-dplayer": "^1.0.1",
+    "@vuepress-something/vuepress-plugin-valine": "^1.0.0",
     "blueimp-md5": "^2.13.0",
-    "gitalk": "^1.6.2",
-    "valine": "^1.4.14"
+    "gitalk": "^1.6.2"
   }
 }
