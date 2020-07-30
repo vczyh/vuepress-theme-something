@@ -1,2 +1,4 @@
 node_modules
-.vuepress/dist
+
+# Yarn
+yarn-error.log
