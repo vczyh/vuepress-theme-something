@@ -30,7 +30,7 @@ vps init
 
 ## Documentation
 
-  - [Docs](https://vczyh.github.io/))
+  - [Docs](https://vczyh.github.io/)
   - [Docs in China](http://vuepress-something.zhangeek.com/)
   - [Live Demo](http://zhangeek.com)
 
