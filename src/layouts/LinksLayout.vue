@@ -4,9 +4,7 @@
       <FriendLink v-show="showTransition" />
     </DefaultTransition>
     <DefaultTransition delay="0.04">
-      <div v-show="showTransition" class="comments">
-        <Valine1 />
-      </div>
+      <Valine v-show="showTransition" class="theme-default-content" />
     </DefaultTransition>
   </div>
 </template>
