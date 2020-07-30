@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div @click="go(url)" class="friend-item">
+    <div @click="go(url)" class="item">
       <div class="avatar">
         <img :src="avatar" />
       </div>
@@ -10,36 +10,16 @@
       </div>
     </div>
   </div>
-  <!-- <div>{{title}}</div> -->
 </template>
 
 <script>
-import Card from "@theme/components/Card.vue";
 export default {
   name: "Link",
-  components: {
-    Card
-  },
   props: ["title", "desc", "avatar", "url"],
-  data() {
-    return {
-      // items: []
-    };
-  },
   methods: {
     go(url) {
       window.open(url);
     }
-  },
-  mounted() {
-    // const user = {
-    //   title: "Zhang Yuheng's Blog",
-    //   desc: "不会写诗 但志在远方",
-    //   avatar: "http://p.vczyh.com/blog/TIM图片20200321204313.jpg",
-    //   url: "https://baidu.com"
-    // };
-    // let i = 10;
-    // while (i-- > 0) this.items.push(user);
   }
 };
 </script>
@@ -50,7 +30,7 @@ $height = 3.5rem
 .wrapper {
   display inline-block
 }
-.friend-item {
+.item {
   display flex
   align-items center
   cursor pointer
@@ -80,7 +60,6 @@ $height = 3.5rem
       overflow hidden
       text-overflow ellipsis
       line-height 1.6rem
-      // color $accentColor
     }
     .title {
       font-size 1rem
@@ -89,7 +68,6 @@ $height = 3.5rem
       font-size 0.8rem
       color #acb3c2
       color #808080
-      // color $accentColor
     }
   }
 }
