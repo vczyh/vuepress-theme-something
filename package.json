@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "keywords": [
     "vuepress",
-    "vuepress theme",
-    "vue",
+    "vuepress-theme",
     "blog"
   ],
   "author": "vczyh",

@@ -1,15 +1,12 @@
 {
   "name": "@vuepress-something/vuepress-plugin-valine",
-  "description": "dplayer for vuepress",
+  "description": "valine for vuepress",
   "version": "1.0.1",
   "main": "src/index.js",
   "author": "vczyh",
   "license": "MIT",
   "keywords": [
     "vuepress",
-    "vuepress theme",
-    "vue",
-    "blog",
     "valine"
   ],
   "repository": {

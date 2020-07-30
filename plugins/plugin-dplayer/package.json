@@ -7,9 +7,6 @@
   "license": "MIT",
   "keywords": [
     "vuepress",
-    "vuepress theme",
-    "vue",
-    "blog",
     "dplayer"
   ],
   "repository": {
@@ -18,9 +15,6 @@
   },
   "scripts": {
     "pub": "npm version patch && npm publish --access public"
-  },
-  "peerDependencies": {
-    "dplayer": "^1.26.0"
   },
   "dependencies": {
     "dplayer": "^1.26.0"
