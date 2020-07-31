@@ -20,6 +20,7 @@
 
     <Home v-if="$page.frontmatter.home" />
     <component v-else :is="layout" />
+
     <back-to-top></back-to-top>
   </div>
 </template>
@@ -49,18 +50,18 @@ export default {
     Sidebar,
     Navbar,
     BackToTop,
-    
+
     Layout,
     TagsLayout,
     PostsLayout,
     IndexLayout,
     ArchiveLayout,
-    LinksLayout
+    LinksLayout,
   },
 
   data() {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
     };
   },
 
@@ -115,11 +116,11 @@ export default {
         {
           "no-navbar": !this.shouldShowNavbar,
           "sidebar-open": this.isSidebarOpen,
-          "no-sidebar": !this.shouldShowSidebar
+          "no-sidebar": !this.shouldShowSidebar,
         },
-        userPageClass
+        userPageClass,
       ];
-    }
+    },
   },
 
   mounted() {
@@ -138,7 +139,7 @@ export default {
     onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
+        y: e.changedTouches[0].clientY,
       };
     },
 
@@ -152,7 +153,7 @@ export default {
           this.toggleSidebar(false);
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>

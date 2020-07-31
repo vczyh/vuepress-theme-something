@@ -1,15 +1,9 @@
 <template>
-  <div class="layout-wrapper posts-layout-wrapper">
-    <!-- <img src="http://p.vczyh.com/blog/background.jpg" class="img" /> -->
-
-    <Info class="info" />
-    <PostsPagination :posts="$currentPathPosts" :key="key" class="posts-pagination" />
-
-    <!-- <div v-if="!isMobile" class="info">
-        <DefaultTransition delay="0.02">
-          <Avatar v-show="showTransition" :key="key"></Avatar>
-        </DefaultTransition>
-    </div>-->
+  <div class="layout-footer-wrapper">
+    <div class="layout-wrapper posts-layout-wrapper">
+      <Info class="info" />
+      <PostsPagination :posts="$currentPathPosts" :key="key" class="posts-pagination" />
+    </div>
   </div>
 </template>
 
@@ -44,13 +38,7 @@ export default {
       clientHeight: 0,
     };
   },
-
-  computed: {
-    themeClass() {
-      return this.isMobile ? "theme-default-content" : "theme-custom-content";
-    },
-  },
-
+  
   watch: {
     $route(to, from) {
       this.key++;
