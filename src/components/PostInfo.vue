@@ -64,14 +64,14 @@ export default {
     display inline-block
     line-height 1.3rem
     height 1.3rem
-    font-size 14px
-    color #666
+    font-size 15px
+    color #7F7F7F
     &:not(:last-child) {
       margin-right 2rem
     }
     span {
       margin-left 5px
-      color #666
+      color #7F7F7F
       &.tag {
         &:not(:last-child) {
           margin-right 0.8rem

@@ -61,13 +61,13 @@ export default {
     margin-right 40px
   }
   .posts-pagination {
-    max-width 740px
+    max-width 750px
   }
 }
 @media (max-width $MQNarrow) {
   .tags-layout-wrapper {
     .tags-container {
-      width 740px
+      width 750px
       margin-right 0
     }
   }

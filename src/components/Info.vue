@@ -44,19 +44,8 @@ export default {
     padding 8px 16px
     margin-bottom 20px
   }
-  // .user {
-  // display flex
-  // flex-direction column
-  // align-items center
-  // font-size 14px
-  // color #666
-  // .avatar {
-  // width 160px
-  // border-radius 50%
-  // }
-  // }
   .desc {
-    font-size 14px
+    font-size 16px
     color #666
   }
   .current-path-tags {

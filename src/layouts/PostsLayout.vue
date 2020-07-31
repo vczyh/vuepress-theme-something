@@ -38,7 +38,7 @@ export default {
       clientHeight: 0,
     };
   },
-  
+
   watch: {
     $route(to, from) {
       this.key++;
@@ -51,7 +51,7 @@ export default {
   display flex
   justify-content center
   .posts-pagination {
-    max-width 700px
+    max-width 750px
   }
 }
 @media (max-width $MQNarrow) {
