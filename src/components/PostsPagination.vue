@@ -29,7 +29,6 @@ import Posts from "@theme/components/Posts.vue";
 import Pagination from "@theme/components/Pagination.vue";
 import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
-// import store from "@theme/store";
 
 export default {
   name: "PostsPagination",

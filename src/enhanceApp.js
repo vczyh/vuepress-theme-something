@@ -31,14 +31,6 @@ export default ({
   Vue.prototype.$posts = posts
   Vue.prototype.$tags = getTags(posts)
   Vue.prototype.$archive = getArchive(posts)
-  const page = getPageByLayout(siteData.pages, 'LinksLayout')
-  const links = []
-  if (page) {
-    for (const category of Object.keys(page.frontmatter.links)) {
-      links.push(...page.frontmatter.links[category])
-    }
-  }
-  Vue.prototype.$links = links
 
   // 全局混入
   Vue.mixin(mixin)

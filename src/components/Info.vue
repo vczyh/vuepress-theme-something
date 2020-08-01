@@ -1,7 +1,6 @@
 <template>
   <div class="info">
     <UserInfo class="common" />
-    <!-- <Card class="common desc">记录学习技术过程，深入理解技术应用。</Card> -->
     <Card class="common desc">{{ $frontmatter.desc || '这个人很懒 ~'}}</Card>
     <Card class="common current-path-tags">
       <div class="title">
@@ -35,10 +34,6 @@ export default {
   display flex
   flex-direction column
   margin-right 40px
-  .img {
-    width 600px
-    // height 100%
-  }
   .common {
     width 330px
     padding 8px 16px

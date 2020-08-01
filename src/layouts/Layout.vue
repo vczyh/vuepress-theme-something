@@ -11,13 +11,15 @@
 
 <script>
 import Page from "@theme/components/Page.vue";
+import Card from "@theme/components/Card.vue";
 import { resolveSidebarItems } from "@parent-theme/util";
 
 export default {
   name: "Layout",
 
   components: {
-    Page
+    Page,
+    Card,
   },
 
   computed: {
@@ -28,7 +30,7 @@ export default {
         this.$site,
         this.$localePath
       );
-    }
-  }
+    },
+  },
 };
 </script>

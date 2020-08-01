@@ -6,11 +6,11 @@ module.exports = (options, ctx) => ({
     '@vuepress-something/vuepress-plugin-valine',
     '@vuepress-something/vuepress-plugin-dplayer',
     '@vuepress-something/vuepress-plugin-components',
-    ['@vuepress/medium-zoom', {
-      selector: '',
-      options: {
-        margin: 16
-      }
-    }]
+    // ['@vuepress/medium-zoom', {
+    //   selector: '',
+    //   options: {
+    //     margin: 16
+    //   }
+    // }]
   ],
 })

@@ -34,12 +34,9 @@ import BackToTop from "@theme/components/BackToTop.vue";
 
 import { resolveSidebarItems } from "@parent-theme/util";
 
-import TagsLayout from "@theme/layouts/TagsLayout.vue";
-import PostsLayout from "@theme/layouts/PostsLayout.vue";
-import Layout from "@theme/layouts/Layout.vue";
-import IndexLayout from "@theme/layouts/IndexLayout.vue";
-import ArchiveLayout from "@theme/layouts/ArchiveLayout.vue";
-import LinksLayout from "@theme/layouts/LinksLayout.vue";
+// import TagsLayout from "@theme/layouts/TagsLayout.vue";
+// import IndexLayout from "@theme/layouts/IndexLayout.vue";
+// import ArchiveLayout from "@theme/layouts/ArchiveLayout.vue";
 
 export default {
   name: "GlobalLayout",
@@ -50,13 +47,6 @@ export default {
     Sidebar,
     Navbar,
     BackToTop,
-
-    Layout,
-    TagsLayout,
-    PostsLayout,
-    IndexLayout,
-    ArchiveLayout,
-    LinksLayout,
   },
 
   data() {

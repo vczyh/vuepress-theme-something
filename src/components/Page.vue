@@ -1,27 +1,27 @@
 <template>
   <main class="page">
     <slot name="top" />
-    <div class="theme-default-content info">
-      <h1>{{$page.title}}</h1>
-      <hr />
-      <PostInfo :post="$page" :showTag="true" :showCount="true"></PostInfo>
-      <!-- <DefaultTransition delay="0.1">
-        <Content v-show="showTransition"/>
-      </DefaultTransition>-->
-    </div>
 
-    <DefaultTransition delay="0.02">
-      <Content v-show="showTransition" class="theme-default-content content" />
-    </DefaultTransition>
+    <Card :canHover="false" class="post">
+      <div class="info">
+        <h1>{{$page.title}}</h1>
+        <hr />
+        <PostInfo :post="$page" :showTag="true" :showCount="true"></PostInfo>
+      </div>
 
-    <PageEdit />
-    <PageNav v-bind="{ sidebarItems }" />
+      <DefaultTransition delay="0.02">
+        <Content v-show="showTransition" class="theme-default-content" />
+      </DefaultTransition>
 
-    <slot name="bottom" />
+      <PageEdit class="page-edit"/>
+      <PageNav v-bind="{ sidebarItems }" />
 
-    <DefaultTransition delay="0.04">
-      <Valine v-show="showTransition" class="theme-default-content" />
-    </DefaultTransition>
+      <slot name="bottom" />
+
+      <DefaultTransition delay="0.04">
+        <Valine v-show="showTransition" class="comment" />
+      </DefaultTransition>
+    </Card>
   </main>
 </template>
 
@@ -31,7 +31,7 @@ import PageNav from "@theme/components/PageNav.vue";
 import PostInfo from "@theme/components/PostInfo.vue";
 import DefaultTransition from "@theme/components/DefaultTransition.vue";
 import transitonMixin from "@theme/mixins/transition";
-
+import Card from "@theme/components/Card.vue";
 export default {
   name: "Page",
   mixins: [transitonMixin],
@@ -39,6 +39,7 @@ export default {
     PageEdit,
     PageNav,
     PostInfo,
+    Card,
     DefaultTransition,
   },
   props: ["sidebarItems"],
@@ -46,16 +47,19 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-// @require '../styles/wrapper.styl';
 .page {
+  padding-top 5.6rem
   padding-bottom 2rem
   display block
-  .info {
-    padding-top 2.5rem
-    padding-bottom 0
-  }
-  .content {
-    padding-top 1.1rem
+  .post {
+    max-width 820px
+    margin 0rem auto
+    .info {
+      padding 0rem 2.5rem
+    }
+    .comment {
+      padding: 2rem 2.5rem
+    }
   }
 }
 </style>

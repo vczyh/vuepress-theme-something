@@ -34,10 +34,6 @@ export default {
     return {
       col: "#404040",
       colors: ["#d54a94", "#ff3828","#6640ff", "#0033ff", "#2e8b57", "#0dbf8c"]
-      // colors: [ "#cc8167", "#ba8f6c"]
-      // colors: ["#808080"]
-      // colors: ["#ff7f50", "#0ec4ba", "#ff8f00"]
-      // colors: ["#409eff", "#67c23a", "#909399", "#f56c6c", "#e6a23c"]
     };
   },
   methods: {

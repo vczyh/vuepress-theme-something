@@ -78,10 +78,6 @@ export default {
 @require '../styles/wrapper.styl'
 
 .tags {
-  // position relative
-  // width 100%
-  // display flex
-  // flex-wrap wrap
   .tag {
     margin 4px 4px 10px
     cursor pointer

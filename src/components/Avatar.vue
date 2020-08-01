@@ -1,12 +1,5 @@
 <template>
   <div>
-    <!-- <Card class="item">
-      <div class="content">
-        <img src="/avatar.jpg" />
-        <h3>vczyh</h3>
-      </div>
-    </Card>-->
-
     <Card class="item">
       <div class="title">{{$frontmatter.desc || '这个人很懒 ~'}}</div>
       <div class="info-items">
@@ -41,16 +34,15 @@ export default {
     Card,
     Tags,
     DefaultTransition,
-    Tag
+    Tag,
   },
   data() {
     return {
-      links: []
+      links: [],
     };
   },
   methods: {
     iconClick(link) {
-      // console.log(link.link);
       window.open(link.link);
     },
     has(type) {
@@ -72,13 +64,12 @@ export default {
     tagClick(current) {
       this.$store.setCurrentPageAction(1);
       this.$router.push(`/tags/?tag=${current}`);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="stylus" scoped>
-// @require '../styles/iconfont.css'
 .item {
   padding 10px 20px
   margin-bottom 20px
