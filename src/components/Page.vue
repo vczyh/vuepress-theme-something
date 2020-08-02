@@ -48,8 +48,8 @@ export default {
 
 <style lang="stylus" scoped>
 .page {
-  padding-top 5.6rem
-  padding-bottom 2rem
+  padding-top 3.6rem
+  padding-bottom 0rem
   display block
   .post {
     max-width 820px
