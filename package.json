@@ -25,6 +25,6 @@
     "@vuepress-something/vuepress-plugin-components": "^1.0.1",
     "@vuepress-something/vuepress-plugin-dplayer": "^1.0.2",
     "@vuepress-something/vuepress-plugin-valine": "^1.0.1",
-    "@vuepress/plugin-medium-zoom": "^1.4.1",
+    "@vuepress/plugin-medium-zoom": "^1.4.1"
   }
 }
