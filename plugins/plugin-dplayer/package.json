@@ -1,7 +1,7 @@
 {
   "name": "@vuepress-something/vuepress-plugin-dplayer",
   "description": "dplayer for vuepress",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/index.js",
   "author": "vczyh",
   "license": "MIT",
