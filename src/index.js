@@ -6,11 +6,18 @@ module.exports = (options, ctx) => ({
     '@vuepress-something/vuepress-plugin-valine',
     '@vuepress-something/vuepress-plugin-dplayer',
     '@vuepress-something/vuepress-plugin-components',
-    // ['@vuepress/medium-zoom', {
-    //   selector: '',
-    //   options: {
-    //     margin: 16
-    //   }
-    // }]
+    ['@vuepress/last-updated', {
+      transformer: (timestamp, lang) => {
+        const moment = require('moment')
+        moment.locale(lang)
+        return moment(timestamp).fromNow()
+      }
+    }],
+    ['@vuepress/medium-zoom', {
+      selector: '',
+      options: {
+        margin: 24
+      }
+    }]
   ],
 })
