@@ -1,0 +1,30 @@
+{
+  "name": "vuepress-theme-something",
+  "version": "1.0.43",
+  "description": "a simple vuepress theme",
+  "main": "index.js",
+  "keywords": [
+    "vuepress",
+    "vuepress-theme",
+    "blog"
+  ],
+  "author": "vczyh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vczyh/vuepress-theme-something.git"
+  },
+  "scripts": {
+    "pub": "npm version patch && npm publish",
+    "push": "node push.js"
+  },
+  "devDependencies": {
+    "vuepress": "^1.4.1"
+  },
+  "dependencies": {
+    "@vuepress-something/vuepress-plugin-components": "^1.0.1",
+    "@vuepress-something/vuepress-plugin-dplayer": "^1.0.2",
+    "@vuepress-something/vuepress-plugin-valine": "^1.0.1",
+    "@vuepress/plugin-medium-zoom": "^1.4.1"
+  }
+}

@@ -1,0 +1,4 @@
+---
+layout: TagsLayout
+sidebar: false
+---
