@@ -1,4 +1,6 @@
 
+该项目目前处于不维护状态
+
 # VuePress Theme - Something
 
 [![npm](https://img.shields.io/npm/v/vuepress-theme-something)](https://www.npmjs.com/package/vuepress-theme-something)
