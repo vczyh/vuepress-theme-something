@@ -44,7 +44,7 @@ export default {
   // padding 10px 120px
 }
 ul {
-  list-style none
+  list-style none 
   margin 0
   padding 0
   position relative
