@@ -17,6 +17,6 @@
     "pub": "npm version patch && npm publish --access public"
   },
   "dependencies": {
-    "valine": "^1.4.14"
+    "valine": "^1.5.0"
   }
 }
